@@ -1,0 +1,232 @@
+.pageWrapper {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+.heroSection {
+  position: relative;
+  padding: 10rem 3rem 6rem;
+  background-color: #0A0B0D;
+  background-image: linear-gradient(180deg, rgba(10, 11, 13, 0.7) 0%, rgba(10, 11, 13, 0.95) 100%), url('/ikc-images/Bice Bahrain IC.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.subTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.italicWord {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #E2D2B0;
+}
+
+.heroDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted-dark);
+  max-width: 620px;
+}
+
+.storySection {
+  padding: 6rem 3rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sectionLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.bodyText {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted-dark);
+  margin-bottom: 1.2rem;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.highlightCard {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.goldIcon {
+  color: var(--gold-primary);
+  margin-bottom: 0.75rem;
+}
+
+.highlightCard h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.35rem;
+}
+
+.highlightCard p {
+  font-size: 0.75rem;
+  color: var(--text-muted-dark);
+  line-height: 1.4;
+}
+
+.storyRight {
+  position: relative;
+}
+
+.imageCard {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.storyImg {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.badgeBox {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(10, 11, 13, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-primary);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeNum {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.valuesSection {
+  padding: 6rem 3rem;
+  background: #0D0E12;
+}
+
+.valuesHeader {
+  margin-bottom: 3.5rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.valueCard {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem 2rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-primary);
+}
+
+.valueIcon {
+  color: var(--gold-primary);
+  margin-bottom: 1.25rem;
+}
+
+.valueCard h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.valueCard p {
+  font-size: 0.82rem;
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}

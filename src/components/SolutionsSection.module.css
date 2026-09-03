@@ -1,0 +1,264 @@
+.section {
+  padding: 6rem 3rem;
+  background-color: var(--bg-dark);
+  position: relative;
+  z-index: 20;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-light);
+}
+
+.italicWord {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #E2D2B0;
+}
+
+.viewAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.viewAllBtn:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.blueprintWrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+.svgOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.connectLine {
+  stroke: rgba(197, 160, 89, 0.2);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  transition: all 0.4s ease;
+}
+
+.activeConnectLine {
+  stroke: var(--gold-primary);
+  stroke-width: 2.5;
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 6px rgba(197, 160, 89, 0.8));
+}
+
+.leftSolutionsList, .rightSolutionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 14;
+}
+
+.solutionCard {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(18, 20, 24, 0.5);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.solutionCard:hover, .activeCard {
+  background: rgba(197, 160, 89, 0.12);
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+  transform: translateY(-2px);
+}
+
+.num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  font-family: var(--font-serif);
+}
+
+.itemTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+.itemDesc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #D8DCE6;
+  font-weight: 500;
+}
+
+/* Floorplan Interactive Area - Borderless 3D Floating Mockup */
+.floorplanContainer {
+  position: relative;
+  height: 560px;
+  border-radius: 0;
+  overflow: visible;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  perspective: 1000px;
+}
+
+.floorplanBg {
+  width: 100%;
+  height: 100%;
+  background: url('/room-mock.png') center/contain no-repeat;
+  filter: brightness(1.08) contrast(1.08) drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7));
+  animation: float3D 6s infinite ease-in-out;
+  transform-style: preserve-3d;
+}
+
+@keyframes float3D {
+  0% {
+    transform: translateY(0px) rotateX(1deg) rotateY(-1deg);
+    filter: brightness(1.08) contrast(1.08) drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+  }
+  50% {
+    transform: translateY(-12px) rotateX(2deg) rotateY(1deg);
+    filter: brightness(1.12) contrast(1.1) drop-shadow(0 35px 45px rgba(0, 0, 0, 0.85));
+  }
+  100% {
+    transform: translateY(0px) rotateX(1deg) rotateY(-1deg);
+    filter: brightness(1.08) contrast(1.08) drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+  }
+}
+
+.pinMark {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pinBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #0A0B0D;
+  background: var(--gold-primary);
+  padding: 1px 6px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.pinDot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 30%, var(--gold-primary) 100%);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 16px var(--gold-primary), 0 0 24px #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.pinRipple {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--gold-primary);
+  animation: pinPulse 1.8s infinite ease-out;
+}
+
+.activePin .pinBadge {
+  opacity: 1;
+  transform: scale(1.15);
+  background: #FFFFFF;
+  color: #0A0B0D;
+  box-shadow: 0 0 12px var(--gold-primary);
+}
+
+.activePin .pinDot {
+  transform: scale(1.4);
+  background: #FFFFFF;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 24px var(--gold-primary), 0 0 36px #FFFFFF;
+}
+
+.expandBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(10, 11, 13, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expandBtn:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+@keyframes pinPulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@media (max-width: 1024px) {
+  .blueprintWrapper {
+    grid-template-columns: 1fr;
+  }
+  .floorplanContainer {
+    height: 350px;
+  }
+}

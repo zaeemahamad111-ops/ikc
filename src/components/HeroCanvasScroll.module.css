@@ -1,0 +1,187 @@
+.heroSectionWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.stickyCanvasContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contentContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: 0 5rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.contentContainer a,
+.contentContainer button {
+  pointer-events: auto;
+}
+
+.heroMain {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: 6rem;
+  text-align: left;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.italicWord {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #E2D2B0;
+}
+
+.description {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #E2E6EE;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.primaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.85rem 1.75rem;
+  background: rgba(18, 20, 24, 0.7);
+  backdrop-filter: blur(8px);
+  color: var(--text-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  border-color: var(--gold-primary);
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+}
+
+.reelBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: opacity 0.3s ease;
+}
+
+.reelBtn:hover {
+  opacity: 0.8;
+}
+
+.playIconBox {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollIndicator {
+  position: absolute;
+  right: 4rem;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scrollIndicator span {
+  writing-mode: vertical-rl;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.scrollDotContainer {
+  width: 20px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  animation: pulseScroll 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseScroll {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(12px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 3rem;
+  }
+  .stepIndex, .scrollIndicator {
+    display: none;
+  }
+  .heroMain {
+    margin-left: 0;
+  }
+}

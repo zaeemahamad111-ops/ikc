@@ -1,0 +1,229 @@
+.pageWrapper {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+.heroSection {
+  position: relative;
+  padding: 10rem 3rem 6rem;
+  background-color: #0A0B0D;
+  background-image: linear-gradient(180deg, rgba(10, 11, 13, 0.72) 0%, rgba(10, 11, 13, 0.95) 100%), url('/ikc-images/Steak House IC.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.subTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.italicWord {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #E2D2B0;
+}
+
+.heroDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted-dark);
+  max-width: 620px;
+}
+
+.contentSection {
+  padding: 5rem 3rem 7rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.filterBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  color: var(--text-muted-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterBtn:hover, .activeFilter {
+  border-color: var(--gold-primary);
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.projectCard {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+}
+
+.imageBox {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.projectCard:hover .cardImg {
+  transform: scale(1.06);
+}
+
+.cardNum {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-light);
+  background: rgba(10, 11, 13, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 2px 10px;
+  border-radius: 2px;
+}
+
+.cardBody {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.locationTag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--gold-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.pinIcon {
+  color: var(--gold-primary);
+}
+
+.projectTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.projectDesc {
+  font-size: 0.82rem;
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+
+.categoryBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.detailBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .detailBtn {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+  color: var(--bg-dark);
+}
+
+@media (max-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

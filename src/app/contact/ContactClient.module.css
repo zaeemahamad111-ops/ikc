@@ -1,0 +1,246 @@
+.pageWrapper {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+.heroSection {
+  position: relative;
+  padding: 10rem 3rem 6rem;
+  background-color: #0A0B0D;
+  background-image: linear-gradient(180deg, rgba(10, 11, 13, 0.72) 0%, rgba(10, 11, 13, 0.95) 100%), url('/ikc-images/All day dining Ic.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.subTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.italicWord {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #E2D2B0;
+}
+
+.heroDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted-dark);
+  max-width: 620px;
+}
+
+.contentSection {
+  padding: 5rem 3rem 7rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sectionLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.infoText {
+  font-size: 0.88rem;
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardItem {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.goldIcon {
+  color: var(--gold-primary);
+  margin-top: 2px;
+}
+
+.cardItem h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.cardItem p {
+  font-size: 0.85rem;
+  color: var(--text-muted-dark);
+}
+
+.formCard {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem;
+  border-radius: 6px;
+}
+
+.formTitle {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold-primary);
+}
+
+.field input, .field select, .field textarea {
+  background: rgba(10, 11, 13, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--gold-primary);
+  outline: none;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  color: var(--bg-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: transparent;
+  color: var(--gold-primary);
+}
+
+.successBox {
+  text-align: center;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.successIcon {
+  color: var(--gold-primary);
+}
+
+.successBox h3 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--text-light);
+}
+
+.successBox p {
+  font-size: 0.88rem;
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+}

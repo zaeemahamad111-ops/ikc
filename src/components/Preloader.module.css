@@ -1,0 +1,102 @@
+.preloaderWrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #0A0B0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  animation: pulseLogo 2s infinite ease-in-out;
+}
+
+.logoMark {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  border: 1.5px solid #C5A059;
+  padding: 4px 14px;
+  line-height: 1;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #C8CDD8;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.tagline {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #C5A059;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.progressBarContainer {
+  width: 280px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #8E7036 0%, #C5A059 50%, #DFBF7A 100%);
+  border-radius: 4px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 12px rgba(197, 160, 89, 0.8);
+}
+
+.percentageText {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E2E6EE;
+  letter-spacing: 1px;
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
