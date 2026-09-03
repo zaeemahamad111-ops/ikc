@@ -175,13 +175,29 @@
 }
 
 @media (max-width: 768px) {
-  .headline {
-    font-size: 3rem;
-  }
-  .stepIndex, .scrollIndicator {
-    display: none;
+  .contentContainer {
+    padding: 0 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(10,11,13,0.3) 0%, rgba(10,11,13,0.7) 100%);
   }
   .heroMain {
+    margin-right: 0;
     margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .headline {
+    font-size: 2.8rem;
+  }
+  .description {
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+  .buttonGroup {
+    justify-content: center;
+  }
+  .scrollIndicator {
+    display: none;
   }
 }

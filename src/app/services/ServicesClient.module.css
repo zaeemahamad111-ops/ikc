@@ -270,3 +270,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 8rem 1.5rem 4rem;
+  }
+  .heroTitle {
+    font-size: 2.6rem;
+  }
+  .contentSection {
+    padding: 3rem 1.5rem 5rem;
+  }
+  .detailLeft {
+    padding: 2.5rem 1.5rem;
+  }
+  .detailTitle {
+    font-size: 2.2rem;
+  }
+  .detailRight {
+    min-height: 280px;
+  }
+}

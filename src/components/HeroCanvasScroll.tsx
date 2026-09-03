@@ -15,11 +15,11 @@ const TOTAL_FRAMES = 150;
 export default function HeroCanvasScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
-  const [loadedCount, setLoadedCount] = useState(0);
-  const [activeStep, setActiveStep] = useState(1);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const frameIndexRef = useRef(0);
+  const requestRef = useRef<number | null>(null);
 
-  // Preload frames
+  // Preload all 150 frame images into memory
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
     let count = 0;
@@ -31,50 +31,41 @@ export default function HeroCanvasScroll() {
 
       img.onload = () => {
         count++;
-        setLoadedCount(count);
       };
       loadedImages.push(img);
     }
-    setImages(loadedImages);
+    imagesRef.current = loadedImages;
   }, []);
 
   // Initialize Canvas & ScrollTrigger
   useEffect(() => {
-    if (images.length < TOTAL_FRAMES || !canvasRef.current || !containerRef.current) return;
-
-    // Smooth Scroll setup (Lenis)
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    if (!canvasRef.current || !containerRef.current) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    // Render frame logic
-    const frameObj = { frame: 0 };
+    // Set canvas dimensions on resize (not inside render loop!)
+    const updateCanvasSize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      renderFrame();
+    };
 
-    const render = () => {
-      const currentImg = images[Math.floor(frameObj.frame)];
+    const renderFrame = () => {
+      const currentImg = imagesRef.current[frameIndexRef.current];
       if (!currentImg || !currentImg.complete) return;
 
-      // Handle High DPI Canvas scaling
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const width = canvas.width / dpr;
+      const height = canvas.height / dpr;
 
+      ctx.save();
+      ctx.scale(dpr, dpr);
       ctx.clearRect(0, 0, width, height);
 
-      // Cover scaling math
+      // Cover scaling calculation
       const imgRatio = currentImg.width / currentImg.height;
       const screenRatio = width / height;
 
@@ -92,37 +83,40 @@ export default function HeroCanvasScroll() {
       }
 
       ctx.drawImage(currentImg, offsetX, offsetY, drawWidth, drawHeight);
+      ctx.restore();
     };
 
-    // Draw initial frame
-    render();
+    updateCanvasSize();
 
     // GSAP ScrollTrigger timeline - Pin hero section during frame sequence animation
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: 'top top',
-      end: '+=3000', // 3000px scroll distance to complete full video animation
+      end: '+=2500', // 2500px scroll distance to complete full video animation
       pin: true,
       pinSpacing: true,
-      scrub: 0.2,
+      scrub: 0.15,
       onUpdate: (self) => {
-        const frameIndex = Math.min(
+        const nextIndex = Math.min(
           TOTAL_FRAMES - 1,
           Math.floor(self.progress * (TOTAL_FRAMES - 1))
         );
-        frameObj.frame = frameIndex;
-        render();
+        if (frameIndexRef.current !== nextIndex) {
+          frameIndexRef.current = nextIndex;
+          if (requestRef.current) cancelAnimationFrame(requestRef.current);
+          requestRef.current = requestAnimationFrame(renderFrame);
+        }
       },
     });
 
-    window.addEventListener('resize', render);
+    window.addEventListener('resize', updateCanvasSize);
 
     return () => {
       st.kill();
-      lenis.destroy();
-      window.removeEventListener('resize', render);
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      window.removeEventListener('resize', updateCanvasSize);
     };
-  }, [images]);
+  }, []);
 
   return (
     <div ref={containerRef} className={styles.heroSectionWrapper}>

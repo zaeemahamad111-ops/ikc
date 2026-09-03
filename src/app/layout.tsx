@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Preloader from '@/components/Preloader';
+import SmoothScroll from '@/components/SmoothScroll';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Preloader />
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

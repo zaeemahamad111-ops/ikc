@@ -261,4 +261,24 @@
   .floorplanContainer {
     height: 350px;
   }
+  .svgOverlay {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .floorplanContainer {
+    height: 260px;
+  }
 }

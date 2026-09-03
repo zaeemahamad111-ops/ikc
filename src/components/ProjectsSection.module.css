@@ -265,6 +265,12 @@
 }
 
 @media (max-width: 600px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  .title {
+    font-size: 2.6rem;
+  }
   .allProjectsGrid {
     grid-template-columns: 1fr;
   }
