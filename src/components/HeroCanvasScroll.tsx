@@ -121,39 +121,8 @@ export default function HeroCanvasScroll() {
   return (
     <div ref={containerRef} className={styles.heroSectionWrapper}>
       <div className={styles.stickyCanvasContainer}>
-        {/* HTML5 Canvas render layer */}
+        {/* Full-bleed HTML5 Canvas Scroll Animation Layer */}
         <canvas ref={canvasRef} className={styles.canvas} />
-
-        {/* Content Layer */}
-        <div className={styles.contentContainer}>
-          {/* Main Hero Header Info */}
-          <div className={styles.heroMain}>
-            <div className={styles.tagline}>PROFESSIONAL KITCHEN SYSTEMS</div>
-            <h1 className={styles.headline}>
-              Engineered <br />
-              to <span className={styles.italicWord}>Perform.</span>
-            </h1>
-            <p className={styles.description}>
-              We design, build and deliver complete commercial kitchen solutions where
-              precision meets performance.
-            </p>
-
-            <div className={styles.buttonGroup}>
-              <Link href="/services" className={styles.primaryBtn}>
-                <span>EXPLORE OUR EXPERTISE</span>
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Scroll Prompt Right Indicator */}
-          <div className={styles.scrollIndicator}>
-            <span>SCROLL TO EXPLORE</span>
-            <div className={styles.scrollDotContainer}>
-              <div className={styles.scrollDot} />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
