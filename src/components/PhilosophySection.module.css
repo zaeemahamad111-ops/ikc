@@ -9,29 +9,30 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 2rem;
-  min-height: 680px;
+  min-height: 600px;
 }
 
 .leftSketchCard {
   background-color: #F5F1EA;
   color: var(--text-dark);
-  padding: 3.5rem 3rem 18rem;
+  padding: 3rem 2.5rem 15rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .stampBadge {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
-  width: 76px;
-  height: 76px;
+  top: 2.5rem;
+  right: 2.5rem;
+  width: 70px;
+  height: 70px;
   border: 1px dashed rgba(197, 160, 89, 0.7);
   border-radius: 50%;
   display: flex;
@@ -41,13 +42,19 @@
   color: var(--gold-dark);
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 1px;
+  z-index: 6;
 }
 
 .stampBadge small {
-  font-size: 0.45rem;
+  font-size: 0.42rem;
   letter-spacing: 2px;
+}
+
+.sketchHeader {
+  position: relative;
+  z-index: 6;
 }
 
 .subHeading {
@@ -56,17 +63,17 @@
   letter-spacing: 2.5px;
   color: #8E7036;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   display: block;
 }
 
 .sketchTitle {
   font-family: var(--font-serif);
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.15;
   color: #1A1D24;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .italicWord {
@@ -77,31 +84,60 @@
 }
 
 .sketchDesc {
-  font-size: 0.92rem;
-  line-height: 1.65;
+  font-size: 0.88rem;
+  line-height: 1.6;
   color: #2D313B;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.75rem;
   max-width: 440px;
   font-weight: 500;
 }
 
-.storyLink {
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #1A1D24;
-  font-size: 0.72rem;
+  padding: 0.75rem 1.4rem;
+  background: #1A1D24;
+  color: #FFFFFF;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-decoration: none;
-  border-bottom: 1px solid #1A1D24;
-  padding-bottom: 4px;
+  border-radius: 30px;
   transition: all 0.3s ease;
 }
 
-.storyLink:hover {
-  color: var(--gold-dark);
-  border-color: var(--gold-dark);
+.primaryCta:hover {
+  background: #8E7036;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.3rem;
+  border: 1px solid #8E7036;
+  color: #8E7036;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background: #8E7036;
+  color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 .sketchImageWrapper {
@@ -110,9 +146,10 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 280px;
+  height: 250px;
   pointer-events: none;
   overflow: hidden;
+  z-index: 2;
 }
 
 .sketchImg {
@@ -121,19 +158,22 @@
   object-fit: cover;
   object-position: bottom left;
   mix-blend-mode: multiply;
-  opacity: 0.95;
+  opacity: 0.92;
   filter: contrast(1.15) brightness(0.96);
 }
 
-/* Right Showcase Card */
+/* Right Showcase Card - Clean Dark Kitchen Photo Presentation */
 .rightShowcaseCard {
   position: relative;
   background-color: var(--bg-dark-card);
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  min-height: 520px;
 }
 
 .showcaseImageBg {
@@ -141,11 +181,11 @@
   inset: 0;
   background: url('/section-2-dark-kitchen.png') center/cover no-repeat;
   filter: brightness(0.85) contrast(1.1);
-  transition: transform 0.8s ease;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rightShowcaseCard:hover .showcaseImageBg {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .showcaseOverlay {
@@ -153,102 +193,49 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10, 11, 13, 0.4) 0%,
-    transparent 40%,
-    rgba(10, 11, 13, 0.95) 100%
+    rgba(10, 11, 13, 0.1) 0%,
+    rgba(10, 11, 13, 0.4) 50%,
+    rgba(10, 11, 13, 0.9) 100%
   );
 }
 
-.featuresGrid {
+.showcaseBadge {
   position: relative;
   z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   background: rgba(10, 11, 13, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.featureItem {
-  padding: 1.4rem 0.8rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.featureItem:last-child {
-  border-right: none;
-}
-
-.featureItem:hover, .activeFeature {
-  background: rgba(197, 160, 89, 0.12);
-}
-
-.featureTop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.6rem;
-}
-
-.featureNum {
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 1px;
-}
-
-.activeFeature .featureNum {
-  color: var(--gold-primary);
-}
-
-.featureIconWrapper {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 8px;
+  padding: 1.25rem 1.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 
-.activeFeature .featureIconWrapper {
+.showcaseBadge:hover {
   border-color: var(--gold-primary);
-  background: rgba(197, 160, 89, 0.2);
+  transform: translateY(-2px);
 }
 
-.featureIcon {
-  color: var(--text-light);
-  opacity: 0.8;
-}
-
-.activeFeature .featureIcon {
+.badgeTag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   color: var(--gold-primary);
-  opacity: 1;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.featureTitle {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 1.2px;
+.badgeTitle {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--text-light);
-  line-height: 1.35;
-  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
-  }
-  .featuresGrid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -260,16 +247,9 @@
     padding: 2.5rem 1.5rem 14rem;
   }
   .sketchTitle {
-    font-size: 2.4rem;
-  }
-  .stampBadge {
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 60px;
-    height: 60px;
-    font-size: 0.8rem;
-  }
-  .featuresGrid {
-    grid-template-columns: 1fr;
+    font-size: 2.2rem;
   }
 }
+
+
+

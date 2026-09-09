@@ -9,9 +9,18 @@ export default function Preloader() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // 3-second progress loader animation
+    // Check if preloader has already been displayed during this session
+    if (typeof window !== 'undefined') {
+      const hasSeen = sessionStorage.getItem('ikc_preloader_seen');
+      if (hasSeen === 'true') {
+        setLoading(false);
+        return;
+      }
+    }
+
+    // 2.8-second progress loader animation for initial entrance
     const startTime = Date.now();
-    const duration = 2800; // 2.8 seconds progress + 0.2s finish
+    const duration = 2600;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -22,8 +31,11 @@ export default function Preloader() {
         clearInterval(interval);
         setFadeOut(true);
         setTimeout(() => {
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem('ikc_preloader_seen', 'true');
+          }
           setLoading(false);
-        }, 500); // fade out duration
+        }, 400); // fade out duration
       }
     }, 30);
 
@@ -60,3 +72,4 @@ export default function Preloader() {
     </div>
   );
 }
+

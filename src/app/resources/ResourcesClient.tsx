@@ -40,7 +40,7 @@ const downloads = [
 const faqs = [
   {
     q: 'What is the standard lead time for a custom commercial kitchen installation?',
-    a: 'Typical turnkey projects take 6 to 12 weeks from initial 3D CAD design approval to final MEP commissioning on site.',
+    a: 'Typical turnkey projects take 6 to 12 weeks, depending on site conditions, from initial 3D CAD design approval to final MEP commissioning on site.',
   },
   {
     q: 'Do you manufacture custom stainless steel fabrication in Italian standards?',

@@ -1,40 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Compass, ShieldCheck, Cpu, Award } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import styles from './PhilosophySection.module.css';
 
-const features = [
-  {
-    id: '01',
-    icon: Compass,
-    title: 'ITALIAN CRAFTSMANSHIP',
-    desc: 'Deep rooted traditions blended with high tech manufacturing.',
-  },
-  {
-    id: '02',
-    icon: ShieldCheck,
-    title: 'PREMIUM MATERIALS',
-    desc: '316L Marine-grade stainless steel engineered for lifetime durability.',
-  },
-  {
-    id: '03',
-    icon: Cpu,
-    title: 'CUSTOM ENGINEERING',
-    desc: 'Tailor-made ergonomic station workflows optimized for chef output.',
-  },
-  {
-    id: '04',
-    icon: Award,
-    title: 'PROFESSIONAL STANDARDS',
-    desc: 'Strict compliance with European safety and hygienic certifications.',
-  },
-];
-
 export default function PhilosophySection() {
-  const [activeFeature, setActiveFeature] = useState(0);
-
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
@@ -46,21 +17,24 @@ export default function PhilosophySection() {
           </div>
 
           <div className={styles.sketchHeader}>
-            <span className={styles.subHeading}>OUR PHILOSOPHY</span>
+            <span className={styles.subHeading}>WHY CHOOSE US</span>
             <h2 className={styles.sketchTitle}>
-              More than equipment. <br />
-              We build the <span className={styles.italicWord}>heart</span> <br />
-              of your kitchen.
+              Why Leading Chefs & Developers <br />
+              <span className={styles.italicWord}>Trust Italian Kitchen Concept.</span>
             </h2>
             <p className={styles.sketchDesc}>
-              Blending Italian craftsmanship with innovative engineering, we create kitchens that are
-              efficient, durable and beautiful to work in.
+              We simplify your kitchen project. Instead of dealing with multiple suppliers, IKC provides complete turnkey support—from CAD design to Italian equipment supply, certified installation, and 24/7 maintenance.
             </p>
 
-            <Link href="/about" className={styles.storyLink}>
-              <span>OUR STORY</span>
-              <ArrowRight size={14} />
-            </Link>
+            <div className={styles.buttonGroup}>
+              <Link href="/about" className={styles.primaryCta}>
+                <span>OUR PROCESS</span>
+                <ArrowRight size={14} />
+              </Link>
+              <Link href="/contact" className={styles.secondaryCta}>
+                <span>REQUEST A QUOTE</span>
+              </Link>
+            </div>
           </div>
 
           {/* Architectural Kitchen Sketch Illustration */}
@@ -73,12 +47,19 @@ export default function PhilosophySection() {
           </div>
         </div>
 
-        {/* Right Card: Dark Luxury Kitchen Showcase */}
+        {/* Right Card: Clean Dark Luxury Kitchen Showcase Image */}
         <div className={styles.rightShowcaseCard}>
           <div className={styles.showcaseImageBg} />
           <div className={styles.showcaseOverlay} />
+          <div className={styles.showcaseBadge}>
+            <span className={styles.badgeTag}>PREMIERE INSTALLATION</span>
+            <h3 className={styles.badgeTitle}>Master Italian Thermal Kitchen Suite</h3>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
+

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Plus, ArrowRight, Sparkles } from 'lucide-react';
+import { ChevronRight, Plus, ArrowRight, Sparkles, MapPin, Calendar, Users, Building2 } from 'lucide-react';
 import styles from './ProjectsSection.module.css';
 
 const projects = [
@@ -10,7 +10,10 @@ const projects = [
     id: '01',
     title: 'BICE BAHRAIN RESTAURANT',
     category: 'HOSPITALITY',
+    clientName: 'BiCE Hospitality Group',
     location: 'Manama, Bahrain',
+    year: '2024',
+    capacity: '450 Covers/Day',
     image: '/ikc-images/Bice Bahrain IC.jpeg',
     specs: ['Turnkey Italian Suite', 'Custom Stainless Counter', 'HACCP Certified'],
     highlight: 'Luxury Fine Dining Suite',
@@ -19,7 +22,10 @@ const projects = [
     id: '02',
     title: 'STEAKHOUSE CHEF SUITE',
     category: 'HOSPITALITY',
+    clientName: 'Downtown Prime Steaks',
     location: 'Dubai Downtown, UAE',
+    year: '2024',
+    capacity: '600 Covers/Day',
     image: '/ikc-images/Steak House IC.jpeg',
     specs: ['Charcoal Grill Stations', 'High-Output Burners', '316L Marine Steel'],
     highlight: 'Heavy Duty Thermal Range',
@@ -28,7 +34,10 @@ const projects = [
     id: '03',
     title: 'TORO TORO KITCHEN',
     category: 'HOSPITALITY',
+    clientName: 'Grosvenor House Luxury Resort',
     location: 'Dubai Marina, UAE',
+    year: '2025',
+    capacity: '750 Covers/Day',
     image: '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
     specs: ['Open Display Kitchen', 'Brass & Steel Finish', 'UV Canopy Hoods'],
     highlight: 'Architectural Open Kitchen',
@@ -37,7 +46,10 @@ const projects = [
     id: '04',
     title: 'ALL-DAY RESORT DINING',
     category: 'HOTELS',
+    clientName: 'Grand Hyatt Beach Resort',
     location: 'Abu Dhabi, UAE',
+    year: '2024',
+    capacity: '1,200 Meals/Day',
     image: '/ikc-images/All day dining Ic.jpeg',
     specs: ['Live Buffet Counters', 'Induction Wok Stations', 'Cold Room Pass'],
     highlight: 'Hotel Resort Buffet Suite',
@@ -46,7 +58,10 @@ const projects = [
     id: '05',
     title: 'BAWE ISLAND RESORT',
     category: 'HOTELS',
+    clientName: 'Bawe Zanzibar Luxury Villas',
     location: 'Zanzibar, Tanzania',
+    year: '2025',
+    capacity: '350 Resort Guests',
     image: '/ikc-images/bawe zanzibar.jpg.jpeg',
     specs: ['Island Resort Suite', 'Marine Anti-Corrosion', 'ANSUL Fire System'],
     highlight: 'Luxury Island Resort Complex',
@@ -55,7 +70,10 @@ const projects = [
     id: '06',
     title: 'LEBANESE CUISINE SUITE',
     category: 'HOSPITALITY',
+    clientName: 'Al Hamra Hospitality',
     location: 'Dubai, UAE',
+    year: '2024',
+    capacity: '500 Covers/Day',
     image: '/ikc-images/Lebanese Restaurant.jpeg',
     specs: ['Specialty Wood Oven', 'Preparation Stations', 'Sanitation Suites'],
     highlight: 'High Volume Specialty Kitchen',
@@ -104,20 +122,42 @@ export default function ProjectsSection() {
                       <span key={i} className={styles.specPill}>{spec}</span>
                     ))}
                   </div>
-                  <Link href="/projects" className={styles.exploreLink}>
-                    <span>VIEW SPECS</span>
+
+                  {/* Deep link directly to the target project on /projects page */}
+                  <Link href={`/projects#project-${project.id}`} className={styles.exploreLink}>
+                    <span>VIEW FULL SPECS</span>
                     <ArrowRight size={12} />
                   </Link>
                 </div>
               </div>
 
-              {/* Card Content Footer */}
+              {/* Enriched Card Content Footer */}
               <div className={styles.cardContent}>
                 <div>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <span className={styles.projectLocation}>{project.location}</span>
+                  <div className={styles.metaRow}>
+                    <span className={styles.projectLocation}>
+                      <MapPin size={11} className={styles.inlineIcon} />
+                      {project.location}
+                    </span>
+                    <span className={styles.projectYear}>
+                      <Calendar size={11} className={styles.inlineIcon} />
+                      {project.year}
+                    </span>
+                  </div>
+                  <div className={styles.clientCapacityRow}>
+                    <span className={styles.clientTag}>
+                      <Building2 size={11} className={styles.inlineIcon} />
+                      {project.clientName}
+                    </span>
+                  </div>
                 </div>
-                <Link href="/projects" className={styles.actionBtn} aria-label="Project Details">
+
+                <Link 
+                  href={`/projects#project-${project.id}`} 
+                  className={styles.actionBtn} 
+                  aria-label={`View ${project.title} Details`}
+                >
                   <Plus size={14} />
                 </Link>
               </div>
@@ -128,3 +168,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+

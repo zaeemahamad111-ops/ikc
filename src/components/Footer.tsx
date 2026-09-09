@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Play, Globe, Phone, Mail, MapPin, Share2 } from 'lucide-react';
+import { ArrowRight, Calendar, Globe, Phone, Mail, MapPin, Share2, MessageSquare } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -11,21 +11,23 @@ export default function Footer() {
       {/* Top CTA Banner */}
       <div className={styles.ctaBanner}>
         <div className={styles.ctaContainer}>
-          <span className={styles.ctaTag}>READY TO BUILD?</span>
+          <span className={styles.ctaTag}>START A CONVERSATION</span>
           <h2 className={styles.ctaTitle}>
             Let’s Build the Kitchen <br />
             Behind Your <span className={styles.italicWord}>Success.</span>
           </h2>
 
           <div className={styles.ctaBtnGroup}>
+            {/* Primary CTA: Solid Gold Metallic Button */}
             <Link href="/contact" className={styles.primaryCta}>
-              <span>START YOUR PROJECT</span>
+              <span>START A PROJECT</span>
               <ArrowRight size={16} />
             </Link>
 
+            {/* Secondary CTA: Glassmorphic Outlined Button */}
             <Link href="/contact" className={styles.secondaryCta}>
-              <div className={styles.playIconBox}>
-                <Play size={12} fill="#FFFFFF" />
+              <div className={styles.iconCircle}>
+                <Calendar size={14} className={styles.calIcon} />
               </div>
               <span>DISCUSS YOUR VISION</span>
             </Link>
@@ -48,7 +50,7 @@ export default function Footer() {
             </Link>
             <p className={styles.brandDesc}>
               Delivering professional kitchen solutions that combine Italian craftsmanship,
-              innovative engineering and seamless execution.
+              innovative thermal engineering and seamless regional execution across UAE, GCC & East Africa.
             </p>
             <div className={styles.socialIcons}>
               <a href="#" aria-label="Share"><Share2 size={16} /></a>
@@ -69,16 +71,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Nav Column: Services */}
+          {/* Nav Column: Services Deep Links */}
           <div className={styles.linkCol}>
             <h3 className={styles.colTitle}>SERVICES</h3>
             <ul>
-              <li><Link href="/services">Cooking Systems</Link></li>
-              <li><Link href="/services">Refrigeration</Link></li>
-              <li><Link href="/services">Preparation</Link></li>
-              <li><Link href="/services">Extraction</Link></li>
-              <li><Link href="/services">Dishwashing</Link></li>
-              <li><Link href="/services">Fabrication</Link></li>
+              <li><Link href="/services#cooking">Cooking Systems</Link></li>
+              <li><Link href="/services#refrigeration">Cold Storage & Refrigeration</Link></li>
+              <li><Link href="/services#preparation">Food Preparation Workstations</Link></li>
+              <li><Link href="/services#extraction">Ventilation & Extraction</Link></li>
+              <li><Link href="/services#dishwashing">Sanitation & Dishwashing</Link></li>
+              <li><Link href="/services#fabrication">Custom Stainless Fabrication</Link></li>
             </ul>
           </div>
 
@@ -96,11 +98,11 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className={styles.linkCol}>
-            <h3 className={styles.colTitle}>CONTACT</h3>
+            <h3 className={styles.colTitle}>REGIONAL OFFICES</h3>
             <ul className={styles.contactList}>
               <li>
                 <Phone size={14} className={styles.goldIcon} />
-                <span>+971 4 123 4567</span>
+                <span>+971 4 123 4567 (Dubai HQ)</span>
               </li>
               <li>
                 <Mail size={14} className={styles.goldIcon} />
@@ -108,7 +110,7 @@ export default function Footer() {
               </li>
               <li>
                 <MapPin size={14} className={styles.goldIcon} />
-                <span>Dubai, United Arab Emirates</span>
+                <span>Dubai (UAE) | Manama (Bahrain) | Zanzibar (Tanzania)</span>
               </li>
             </ul>
           </div>
@@ -126,3 +128,4 @@ export default function Footer() {
     </footer>
   );
 }
+

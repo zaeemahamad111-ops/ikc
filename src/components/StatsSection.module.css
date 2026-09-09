@@ -17,6 +17,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   text-align: left;
+  margin-bottom: 4rem;
 }
 
 .statItem {
@@ -45,8 +46,211 @@
   max-width: 220px;
 }
 
+/* Client Logos Wrapper */
+.logosWrapper {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.logosTagline {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #8E7036;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.logosRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logoPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.logoPill:hover {
+  transform: translateY(-2px);
+  border-color: #8E7036;
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(142, 112, 54, 0.12);
+}
+
+.buildingIcon {
+  color: #8E7036;
+}
+
+.clientName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1A1D24;
+}
+
+.clientLoc {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6C727F;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  padding-left: 6px;
+}
+
+/* Executive Chef Testimonials Carousel */
+.testimonialContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(142, 112, 54, 0.2);
+  border-radius: 12px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.quoteIconBg {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  opacity: 0.12;
+  color: #8E7036;
+}
+
+.ratingStars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.verifiedBadge {
+  margin-left: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #15803D;
+  background: #F0FDF4;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #DCFCE7;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1A1D24;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.authorFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.5rem;
+}
+
+.authorName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1D24;
+  margin-bottom: 0.2rem;
+}
+
+.authorRole {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #525866;
+}
+
+.goldVenue {
+  color: #8E7036;
+  font-weight: 700;
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #F4F1EA;
+  color: #1A1D24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  background: #8E7036;
+  color: #FFFFFF;
+  border-color: #8E7036;
+}
+
+.counterText {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6C727F;
+}
+
 @media (max-width: 1024px) {
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .testimonialCard {
+    padding: 2.5rem 2rem;
+  }
+  .quoteText {
+    font-size: 1.25rem;
+  }
 }
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .statItem {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 1.5rem;
+    padding-right: 0;
+  }
+  .authorFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}
+

@@ -17,6 +17,15 @@
   margin-bottom: 3.5rem;
 }
 
+.sectionBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--gold-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .title {
   font-family: var(--font-serif);
   font-size: 3.2rem;
@@ -44,16 +53,18 @@
   letter-spacing: 1.5px;
   text-decoration: none;
   transition: all 0.3s ease;
+  border-radius: 30px;
 }
 
 .viewAllBtn:hover {
   border-color: var(--gold-primary);
   color: var(--gold-primary);
+  background: rgba(197, 160, 89, 0.1);
 }
 
 .blueprintWrapper {
   display: grid;
-  grid-template-columns: 280px 1fr 280px;
+  grid-template-columns: 310px 1fr 310px;
   gap: 2rem;
   align-items: center;
   position: relative;
@@ -69,7 +80,7 @@
 }
 
 .connectLine {
-  stroke: rgba(197, 160, 89, 0.2);
+  stroke: rgba(197, 160, 89, 0.25);
   stroke-width: 1.5;
   stroke-dasharray: 4 4;
   transition: all 0.4s ease;
@@ -79,34 +90,57 @@
   stroke: var(--gold-primary);
   stroke-width: 2.5;
   stroke-dasharray: none;
-  filter: drop-shadow(0 0 6px rgba(197, 160, 89, 0.8));
+  filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.9));
+}
+
+.glowingDot {
+  filter: drop-shadow(0 0 10px var(--gold-primary));
 }
 
 .leftSolutionsList, .rightSolutionsList {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.75rem;
   position: relative;
   z-index: 14;
 }
 
 .solutionCard {
   display: flex;
-  gap: 1.25rem;
-  padding: 1.25rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(18, 20, 24, 0.5);
-  backdrop-filter: blur(8px);
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 20, 24, 0.6);
+  backdrop-filter: blur(12px);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .solutionCard:hover, .activeCard {
   background: rgba(197, 160, 89, 0.12);
   border-color: var(--gold-primary);
-  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.18);
   transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconBox {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .num {
@@ -117,7 +151,7 @@
 }
 
 .itemTitle {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   color: var(--text-light);
@@ -125,16 +159,59 @@
 }
 
 .itemDesc {
-  font-size: 0.82rem;
-  line-height: 1.55;
+  font-size: 0.8rem;
+  line-height: 1.5;
   color: #D8DCE6;
-  font-weight: 500;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.specPillsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.specTag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #E2D2B0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.checkIcon {
+  color: var(--gold-primary);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold-primary);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.cardLink:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
 }
 
 /* Floorplan Interactive Area - Borderless 3D Floating Mockup */
 .floorplanContainer {
   position: relative;
-  height: 560px;
+  height: 580px;
   border-radius: 0;
   overflow: visible;
   border: none;
@@ -148,21 +225,17 @@
   height: 100%;
   background: url('/room-mock.png') center/contain no-repeat;
   filter: brightness(1.08) contrast(1.08) drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7));
-  animation: float3D 6s infinite ease-in-out;
-  transform-style: preserve-3d;
+  animation: subtlePulse 5s infinite ease-in-out;
 }
 
-@keyframes float3D {
+@keyframes subtlePulse {
   0% {
-    transform: translateY(0px) rotateX(1deg) rotateY(-1deg);
     filter: brightness(1.08) contrast(1.08) drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
   }
   50% {
-    transform: translateY(-12px) rotateX(2deg) rotateY(1deg);
-    filter: brightness(1.12) contrast(1.1) drop-shadow(0 35px 45px rgba(0, 0, 0, 0.85));
+    filter: brightness(1.14) contrast(1.1) drop-shadow(0 30px 40px rgba(197, 160, 89, 0.25));
   }
   100% {
-    transform: translateY(0px) rotateX(1deg) rotateY(-1deg);
     filter: brightness(1.08) contrast(1.08) drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
   }
 }
@@ -186,7 +259,7 @@
   border-radius: 10px;
   margin-bottom: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  opacity: 0.8;
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 
@@ -276,9 +349,10 @@
     gap: 1.5rem;
   }
   .title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   .floorplanContainer {
     height: 260px;
   }
 }
+

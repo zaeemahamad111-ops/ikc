@@ -232,9 +232,52 @@
   text-transform: uppercase;
 }
 
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
 .projectLocation {
-  font-size: 0.72rem;
-  color: #777C85;
+  font-size: 0.7rem;
+  color: #525866;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.projectYear {
+  font-size: 0.68rem;
+  color: #8E7036;
+  font-weight: 700;
+  background: rgba(142, 112, 54, 0.1);
+  padding: 1px 6px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.clientCapacityRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.clientTag {
+  font-size: 0.68rem;
+  color: #2D313B;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inlineIcon {
+  color: #8E7036;
 }
 
 .actionBtn {
@@ -249,6 +292,7 @@
   color: #1A1D24;
   text-decoration: none;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .projectCard:hover .actionBtn {
@@ -280,3 +324,4 @@
     gap: 1.5rem;
   }
 }
+

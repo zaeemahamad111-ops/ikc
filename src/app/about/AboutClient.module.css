@@ -55,6 +55,56 @@
   max-width: 620px;
 }
 
+.heroCtaRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.primaryCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #C5A059 0%, #8E7036 100%);
+  color: #0A0B0D;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.35);
+  transition: all 0.3s ease;
+  border: 1px solid #DFBF7A;
+}
+
+.primaryCtaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(197, 160, 89, 0.55);
+}
+
+.secondaryCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 1.8rem;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 30px;
+  color: #E2D2B0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.secondaryCtaBtn:hover {
+  background: rgba(197, 160, 89, 0.15);
+  color: #FFFFFF;
+}
+
 .storySection {
   padding: 6rem 3rem;
 }
@@ -108,7 +158,7 @@
   background: var(--bg-dark-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .goldIcon {
@@ -175,9 +225,95 @@
   text-transform: uppercase;
 }
 
+/* 5-Step Turnkey Process Section */
+.processSection {
+  padding: 6rem 3rem;
+  background: #090A0C;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.processHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.sectionDesc {
+  font-size: 0.9rem;
+  color: var(--text-muted-dark);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.stepCard {
+  background: rgba(18, 20, 24, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.stepCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+  background: rgba(197, 160, 89, 0.1);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.15);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.stepNum {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+}
+
+.stepIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepTitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.stepDesc {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--text-muted-dark);
+}
+
+/* Why Choose Us / Values Section */
 .valuesSection {
   padding: 6rem 3rem;
-  background: #0D0E12;
+  background: #0B0C0E;
 }
 
 .valuesHeader {
@@ -191,16 +327,19 @@
 }
 
 .valueCard {
-  background: var(--bg-dark-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 20, 24, 0.7);
+  border: 1px solid rgba(197, 160, 89, 0.25);
   padding: 2.5rem 2rem;
-  border-radius: 6px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
 }
 
 .valueCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   border-color: var(--gold-primary);
+  background: rgba(197, 160, 89, 0.12);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.15);
 }
 
 .valueIcon {
@@ -209,7 +348,7 @@
 }
 
 .valueCard h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-light);
   margin-bottom: 0.75rem;
@@ -217,9 +356,66 @@
 }
 
 .valueCard p {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-muted-dark);
   line-height: 1.6;
+}
+
+/* Bottom Conversion Banner */
+.bottomCtaBanner {
+  margin-top: 5rem;
+  background: linear-gradient(135deg, rgba(18, 20, 24, 0.9) 0%, rgba(30, 34, 42, 0.9) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 12px;
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.bottomCtaTitle {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.bottomCtaDesc {
+  font-size: 0.88rem;
+  color: var(--text-muted-dark);
+}
+
+.bottomCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  background: linear-gradient(135deg, #C5A059 0%, #8E7036 100%);
+  color: #0A0B0D;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  border-radius: 30px;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid #DFBF7A;
+}
+
+.bottomCtaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(197, 160, 89, 0.6);
+  color: #0A0B0D;
+}
+
+@media (max-width: 1200px) {
+  .processGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -227,6 +423,17 @@
     grid-template-columns: 1fr;
   }
   .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .processGrid, .valuesGrid {
     grid-template-columns: 1fr;
+  }
+  .bottomCtaBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
   }
 }
