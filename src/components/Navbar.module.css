@@ -166,6 +166,35 @@
   z-index: 90;
 }
 
+.mobileDrawerHeader {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobileBackBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 100px;
+  color: var(--gold-primary);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobileBackBtn:active {
+  background: var(--gold-primary);
+  color: #0A0B0D;
+}
+
 .mobileNavLinks {
   display: flex;
   flex-direction: column;

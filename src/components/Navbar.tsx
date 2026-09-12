@@ -80,15 +80,29 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer Overlay */}
-      <div className={`${styles.mobileDrawer} ${mobileOpen ? styles.mobileOpen : ''}`}>
-        <div className={styles.mobileNavLinks}>
-          <Link href="/" className={pathname === '/' ? styles.mobileActive : ''}>HOME</Link>
-          <Link href="/about" className={pathname === '/about' ? styles.mobileActive : ''}>ABOUT US</Link>
-          <Link href="/services" className={pathname === '/services' ? styles.mobileActive : ''}>SERVICES</Link>
-          <Link href="/projects" className={pathname === '/projects' ? styles.mobileActive : ''}>PROJECTS</Link>
-          <Link href="/resources" className={pathname === '/resources' ? styles.mobileActive : ''}>RESOURCES</Link>
-          <Link href="/contact" className={pathname === '/contact' ? styles.mobileActive : ''}>CONTACT</Link>
-          <Link href="/contact" className={styles.mobileCta}>START A PROJECT</Link>
+      <div 
+        className={`${styles.mobileDrawer} ${mobileOpen ? styles.mobileOpen : ''}`}
+        onClick={() => setMobileOpen(false)}
+      >
+        <div className={styles.mobileDrawerHeader}>
+          <button 
+            className={styles.mobileBackBtn}
+            onClick={() => setMobileOpen(false)}
+            aria-label="Back to Screen"
+          >
+            <X size={18} />
+            <span>CLOSE &bull; BACK TO PAGE</span>
+          </button>
+        </div>
+
+        <div className={styles.mobileNavLinks} onClick={(e) => e.stopPropagation()}>
+          <Link href="/" className={pathname === '/' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>HOME</Link>
+          <Link href="/about" className={pathname === '/about' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>ABOUT US</Link>
+          <Link href="/services" className={pathname === '/services' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>SERVICES</Link>
+          <Link href="/projects" className={pathname === '/projects' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>PROJECTS</Link>
+          <Link href="/resources" className={pathname === '/resources' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>RESOURCES</Link>
+          <Link href="/contact" className={pathname === '/contact' ? styles.mobileActive : ''} onClick={() => setMobileOpen(false)}>CONTACT</Link>
+          <Link href="/contact" className={styles.mobileCta} onClick={() => setMobileOpen(false)}>START A PROJECT</Link>
         </div>
       </div>
     </header>

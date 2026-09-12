@@ -309,10 +309,53 @@
   100% { transform: scale(2.2); opacity: 0; }
 }
 
+.mobileTimelineContainer {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .blueprintWrapper {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .mobileTimelineContainer {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.35rem;
+    width: 4px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .mobileTimelineTrack {
+    position: absolute;
+    inset: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+  .mobileTimelineProgress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold-primary) 0%, #FFFFFF 100%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--gold-primary);
+    transition: height 0.1s linear;
+  }
+  .mobileTimelineDot {
+    position: absolute;
+    bottom: -4px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold-primary);
+    box-shadow: 0 0 12px var(--gold-primary), 0 0 20px #FFFFFF;
   }
   .floorplanContainer {
     display: none;

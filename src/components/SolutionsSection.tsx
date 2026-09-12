@@ -72,6 +72,8 @@ export default function SolutionsSection() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [svgSize, setSvgSize] = useState({ w: 0, h: 0 });
 
+  const [mobileProgress, setMobileProgress] = useState(0);
+
   const updateLineCoords = useCallback(() => {
     if (!wrapperRef.current || !floorplanRef.current) return;
     const wrapperRect = wrapperRef.current.getBoundingClientRect();
@@ -109,10 +111,23 @@ export default function SolutionsSection() {
     const imgTimer = setTimeout(updateLineCoords, 500);
     const handleResize = () => updateLineCoords();
     
+    const handleScroll = () => {
+      if (!wrapperRef.current) return;
+      const rect = wrapperRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const totalHeight = rect.height;
+      const currentScroll = windowHeight - rect.top;
+      const progress = Math.min(Math.max((currentScroll - 100) / (totalHeight), 0), 1) * 100;
+      setMobileProgress(progress);
+    };
+
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
       clearTimeout(imgTimer);
     };
   }, [updateLineCoords]);
@@ -144,6 +159,17 @@ export default function SolutionsSection() {
 
         {/* 3D Blueprint & Hotspots Section */}
         <div ref={wrapperRef} className={styles.blueprintWrapper}>
+          {/* Mobile Vertical Timeline Track */}
+          <div className={styles.mobileTimelineContainer}>
+            <div className={styles.mobileTimelineTrack} />
+            <div 
+              className={styles.mobileTimelineProgress} 
+              style={{ height: `${mobileProgress}%` }}
+            >
+              <div className={styles.mobileTimelineDot} />
+            </div>
+          </div>
+
           {/* SVG Connecting Leader Lines Overlay */}
           <svg className={styles.svgOverlay} viewBox={`0 0 ${svgSize.w} ${svgSize.h}`} preserveAspectRatio="none">
             <defs>

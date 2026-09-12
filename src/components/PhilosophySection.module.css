@@ -177,17 +177,19 @@
   min-height: 520px;
 }
 
-/* Gradient blend from the left cream card */
-.rightShowcaseCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 12%; /* Reduced width for a tighter blend */
-  background: linear-gradient(to right, #F5F1EA 0%, transparent 100%);
-  z-index: 5;
-  pointer-events: none;
+/* Gradient blend from the left cream card (desktop only) */
+@media (min-width: 1025px) {
+  .rightShowcaseCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 8%;
+    background: linear-gradient(to right, #F5F1EA 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+  }
 }
 
 .showcaseImageBg {
