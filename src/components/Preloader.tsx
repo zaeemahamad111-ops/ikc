@@ -9,16 +9,7 @@ export default function Preloader() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Check if preloader has already been displayed during this session
-    if (typeof window !== 'undefined') {
-      const hasSeen = sessionStorage.getItem('ikc_preloader_seen');
-      if (hasSeen === 'true') {
-        setLoading(false);
-        return;
-      }
-    }
-
-    // 5-second progress loader animation for initial entrance & 3D canvas preloading
+    // 5.0-second precision progress loader animation
     const startTime = Date.now();
     const duration = 5000;
 
@@ -31,13 +22,10 @@ export default function Preloader() {
         clearInterval(interval);
         setFadeOut(true);
         setTimeout(() => {
-          if (typeof window !== 'undefined') {
-            sessionStorage.setItem('ikc_preloader_seen', 'true');
-          }
           setLoading(false);
-        }, 400); // fade out duration
+        }, 500); // smooth fade out duration
       }
-    }, 30);
+    }, 20);
 
     return () => clearInterval(interval);
   }, []);
@@ -52,9 +40,9 @@ export default function Preloader() {
           <img src="/logo.png" alt="Italian Kitchen Concept Logo" className={styles.brandLogoImg} />
         </div>
 
-        <p className={styles.tagline}>ITALIAN DESIGN & THERMAL ENGINEERING</p>
+        <p className={styles.tagline}>ITALIAN DESIGN &amp; THERMAL ENGINEERING</p>
 
-        {/* 3-Second Loading Bar */}
+        {/* 5-Second Glowing Gold Loading Bar */}
         <div className={styles.progressBarContainer}>
           <div className={styles.progressBarFill} style={{ width: `${progress}%` }} />
         </div>
@@ -67,4 +55,3 @@ export default function Preloader() {
     </div>
   );
 }
-
