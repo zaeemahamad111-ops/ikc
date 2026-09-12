@@ -18,9 +18,9 @@ export default function Preloader() {
       }
     }
 
-    // 2.8-second progress loader animation for initial entrance
+    // 5-second progress loader animation for initial entrance & 3D canvas preloading
     const startTime = Date.now();
-    const duration = 2600;
+    const duration = 5000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
