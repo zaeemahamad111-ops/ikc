@@ -64,12 +64,13 @@ export default function AboutClient() {
         <div className={styles.heroContainer}>
           <span className={styles.subTag}>ABOUT ITALIAN KITCHEN CONCEPT</span>
           <h1 className={styles.heroTitle}>
-            Turnkey Commercial Kitchens. <br />
-            <span className={styles.italicWord}>Italian Craftsmanship & Complete Support.</span>
+            Engineered for Performance. <br />
+            <span className={styles.italicWord}>Built to Last.</span>
           </h1>
           <p className={styles.heroDesc}>
-            From initial concept consultation and 3D CAD design to premium Italian equipment supply, 
-            certified installation, and 24/7 after-sales maintenance—we deliver complete kitchen solutions built for performance.
+            We design, engineer, supply, and deliver high-performance commercial kitchens for the hospitality industry across the UAE and GCC.
+            <br /><br />
+            Rooted in Italian craftsmanship and driven by technical precision, we manage every stage of the journey — from concept and engineering to manufacturing, installation, and final handover.
           </p>
 
           <div className={styles.heroCtaRow}>

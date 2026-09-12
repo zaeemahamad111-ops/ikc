@@ -137,24 +137,11 @@
   margin-bottom: 1.5rem;
 }
 
-.logoMark {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--text-light);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 2px 8px;
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: #A0A5B0;
-  line-height: 1.15;
+.brandLogoImg {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .brandDesc {

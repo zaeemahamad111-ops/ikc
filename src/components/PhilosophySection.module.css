@@ -10,8 +10,11 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  gap: 2rem;
+  gap: 0;
   min-height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .leftSketchCard {
@@ -22,9 +25,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 6px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .stampBadge {
@@ -166,14 +168,26 @@
 .rightShowcaseCard {
   position: relative;
   background-color: var(--bg-dark-card);
-  border-radius: 6px;
+  border-radius: 0;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: none;
   min-height: 520px;
+}
+
+/* Gradient blend from the left cream card */
+.rightShowcaseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 12%; /* Reduced width for a tighter blend */
+  background: linear-gradient(to right, #F5F1EA 0%, transparent 100%);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .showcaseImageBg {

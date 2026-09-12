@@ -210,18 +210,26 @@ export default function ProjectsClient() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    // Check hash for deep link
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const targetId = window.location.hash.replace('#project-', '').replace('#', '');
-      const found = allProjectsList.find((p) => p.id === targetId || p.id === String(targetId).padStart(2, '0'));
-      if (found) {
-        setSelectedProject(found);
-        setTimeout(() => {
-          const el = document.getElementById(`project-${found.id}`);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+    const handleHash = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const targetId = window.location.hash.replace('#project-', '').replace('#', '');
+        const found = allProjectsList.find((p) => p.id === targetId || p.id === String(targetId).padStart(2, '0'));
+        if (found) {
+          setSelectedProject(found);
+          setTimeout(() => {
+            const el = document.getElementById(`project-${found.id}`);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+        }
       }
-    }
+    };
+    
+    // Check on mount
+    handleHash();
+
+    // Check on hashchange
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
   const filteredProjects = activeCategory === 'All'
@@ -237,8 +245,8 @@ export default function ProjectsClient() {
         <div className={styles.heroContainer}>
           <span className={styles.subTag}>PORTFOLIO SHOWCASE</span>
           <h1 className={styles.heroTitle}>
-            Spaces We’ve <br />
-            <span className={styles.italicWord}>Engineered & Delivered.</span>
+            The Kitchens Behind <br />
+            <span className={styles.italicWord}>Great Experiences.</span>
           </h1>
           <p className={styles.heroDesc}>
             Explore our portfolio of completed turnkey commercial kitchens, luxury hotel dining suites, 

@@ -1,144 +1,140 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight, Building2, ShieldCheck, Award } from 'lucide-react';
+import React from 'react';
+import { Quote, ChevronRight, Award, ShieldCheck, Wrench, Globe2 } from 'lucide-react';
 import styles from './StatsSection.module.css';
 
 const stats = [
   {
     value: '40+',
-    label: 'Projects Completed Across UAE & GCC',
+    title: 'Projects Completed',
+    subtitle: 'Across UAE & GCC Region',
+    icon: Globe2,
+    badge: 'ESTABLISHED LEGACY'
   },
   {
     value: '100%',
-    label: 'Italian Design & Thermal Engineering',
+    title: 'Italian Engineering',
+    subtitle: 'Thermal & Spatial Mastery',
+    icon: Award,
+    badge: 'CERTIFIED SUITES'
   },
   {
     value: 'Turnkey',
-    label: 'End-to-End Kitchen Solutions',
+    title: 'End-to-End Delivery',
+    subtitle: 'Design to Final Handover',
+    icon: ShieldCheck,
+    badge: 'FULL SCOPE'
   },
   {
     value: '24/7',
-    label: 'Reliable Regional After-Sales Support',
+    title: 'Regional Support',
+    subtitle: 'Rapid Response Maintenance',
+    icon: Wrench,
+    badge: 'ALWAYS ON'
   },
 ];
 
 const clientLogos = [
-  { name: 'BiCE Ristorante', location: 'Hilton JBR / Manama' },
-  { name: 'Toro Toro', location: 'Grosvenor House Dubai' },
-  { name: 'Bawe Island Resort', location: 'Zanzibar, Tanzania' },
-  { name: 'Jumeirah Golf Estates', location: 'Dubai, UAE' },
-  { name: 'Marriott Marquis', location: 'Dar es Salaam' },
-  { name: 'Grand Hyatt', location: 'Abu Dhabi, UAE' },
-  { name: 'Volante Tower', location: 'Business Bay Dubai' },
-];
-
-const testimonials = [
-  {
-    quote: "Italian Kitchen Concept delivered our high-volume cooking line and refrigeration with surgical precision. Their custom stainless fabrication handles 500+ covers daily without missing a beat.",
-    author: "Executive Chef Marco V.",
-    role: "Culinary Director",
-    venue: "BiCE Ristorante Dubai & Bahrain",
-    rating: 5,
-    location: "UAE & Bahrain",
-  },
-  {
-    quote: "The heavy-duty island suite and UV extraction hood installed at Bawe Resort are true masterpieces of thermal engineering. Outstanding reliability in high-humidity island environments.",
-    author: "Chef Antoine B.",
-    role: "Head Chef",
-    venue: "Bawe Tropical Island Resort",
-    rating: 5,
-    location: "Zanzibar, Tanzania",
-  },
-  {
-    quote: "From 3D CAD blueprint layout to final HACCP commissioning, IKC provided flawless execution for our open display kitchen. Truly top-tier Italian craftsmanship.",
-    author: "Tariq Al-Mansoor",
-    role: "Operations Manager",
-    venue: "Luxury Fine Dining Group",
-    rating: 5,
-    location: "Manama, Bahrain",
-  },
+  "BiCE RISTORANTE", "TORO TORO", "BAWE ISLAND", "JUMEIRAH RESORTS", "MARRIOTT HOTEL", "GRAND HYATT", "VOLANTE TOWER"
 ];
 
 export default function StatsSection() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const nextTestimonial = () => {
-    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const current = testimonials[activeTestimonial];
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Top 4 Key Performance Stats */}
-        <div className={styles.statsGrid}>
-          {stats.map((stat, idx) => (
-            <div key={idx} className={styles.statItem}>
-              <div className={styles.statValue}>{stat.value}</div>
-              <div className={styles.statLabel}>{stat.label}</div>
+        
+        {/* Top Editorial Header */}
+        <div className={styles.headerRow}>
+          <div className={styles.headerLeft}>
+            <div className={styles.goldBadge}>
+              <span className={styles.goldDot}></span>
+              <span>BUILT FOR A HIGHER STANDARD</span>
             </div>
-          ))}
+            <h2 className={styles.mainTitle}>
+              Global Experience. <br/>
+              Lasting <span className={styles.goldItalic}>Impact.</span>
+            </h2>
+          </div>
+
+          <div className={styles.headerRight}>
+            <p className={styles.headerDesc}>
+              From iconic Michelin-starred restaurants to world-class luxury resorts, our kitchens power some of the most ambitious hospitality spaces across the UAE and GCC.
+            </p>
+          </div>
         </div>
 
-        {/* Client Logos Marquee / Grid */}
-        <div className={styles.logosWrapper}>
-          <span className={styles.logosTagline}>TRUSTED BY PREMIERE HOSPITALITY BRANDS</span>
+        {/* Asymmetrical Metric Cards Grid */}
+        <div className={styles.metricsGrid}>
+          {stats.map((stat, idx) => {
+            const Icon = stat.icon;
+            return (
+              <div key={idx} className={`${styles.metricCard} ${idx === 0 ? styles.featuredCard : ''}`}>
+                <div className={styles.cardTop}>
+                  <span className={styles.cardBadge}>{stat.badge}</span>
+                  <div className={styles.iconCircle}>
+                    <Icon size={16} />
+                  </div>
+                </div>
+                <div className={styles.cardMiddle}>
+                  <span className={styles.statNumber}>{stat.value}</span>
+                </div>
+                <div className={styles.cardBottom}>
+                  <h3 className={styles.statTitle}>{stat.title}</h3>
+                  <p className={styles.statSubtitle}>{stat.subtitle}</p>
+                </div>
+                <div className={styles.hoverLine}></div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Partners Showcase Band */}
+        <div className={styles.partnersContainer}>
+          <div className={styles.partnersHeader}>
+            <span className={styles.partnersTag}>TRUSTED BY PREMIERE HOSPITALITY BRANDS</span>
+            <div className={styles.dividerLine}></div>
+          </div>
+          
           <div className={styles.logosRow}>
-            {clientLogos.map((client, i) => (
-              <div key={i} className={styles.logoPill}>
-                <Building2 size={13} className={styles.buildingIcon} />
-                <span className={styles.clientName}>{client.name}</span>
-                <span className={styles.clientLoc}>{client.location}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Executive Chef Testimonial Carousel */}
-        <div className={styles.testimonialContainer}>
-          <div className={styles.testimonialCard}>
-            <div className={styles.quoteIconBg}>
-              <Quote size={40} className={styles.quoteSvg} />
-            </div>
-
-            <div className={styles.ratingStars}>
-              {[...Array(current.rating)].map((_, i) => (
-                <Star key={i} size={14} fill="#C5A059" color="#C5A059" />
+            <div className={styles.logosMarquee}>
+              {[...clientLogos, ...clientLogos, ...clientLogos].map((logo, idx) => (
+                <div key={idx} className={styles.logoCard}>
+                  <span className={styles.logoText}>{logo}</span>
+                </div>
               ))}
-              <span className={styles.verifiedBadge}>
-                <ShieldCheck size={12} />
-                Verified Commercial Client
-              </span>
-            </div>
-
-            <p className={styles.quoteText}>“{current.quote}”</p>
-
-            <div className={styles.authorFooter}>
-              <div>
-                <h4 className={styles.authorName}>{current.author}</h4>
-                <p className={styles.authorRole}>{current.role} — <span className={styles.goldVenue}>{current.venue}</span> ({current.location})</p>
-              </div>
-
-              <div className={styles.navControls}>
-                <button onClick={prevTestimonial} className={styles.navBtn} aria-label="Previous Testimonial">
-                  <ChevronLeft size={16} />
-                </button>
-                <span className={styles.counterText}>{activeTestimonial + 1} / {testimonials.length}</span>
-                <button onClick={nextTestimonial} className={styles.navBtn} aria-label="Next Testimonial">
-                  <ChevronRight size={16} />
-                </button>
-              </div>
             </div>
           </div>
         </div>
+
+        {/* Luxury Testimonial Showcase */}
+        <div className={styles.testimonialWrapper}>
+          <div className={styles.quoteCard}>
+            <div className={styles.quoteHeader}>
+              <Quote size={28} className={styles.quoteIcon} />
+              <span className={styles.quoteLabel}>CLIENT TESTIMONIAL</span>
+            </div>
+            
+            <p className={styles.quoteBody}>
+              &ldquo;Italian Kitchen Concept delivered our high-volume cooking suite with surgical precision. Their custom thermal fabrication handles 500+ covers daily without compromise.&rdquo;
+            </p>
+            
+            <div className={styles.quoteAuthor}>
+              <span className={styles.authorName}>OPERATIONS DIRECTOR</span>
+              <span className={styles.authorLocation}>BiCE RISTORANTE &bull; MANAMA, BAHRAIN</span>
+            </div>
+          </div>
+
+          <div className={styles.imageCard}>
+            <img src="/ikc-images/Bice Bahrain IC.jpeg" alt="BiCE Ristorante Kitchen" className={styles.kitchenPhoto} />
+            <div className={styles.imageOverlay}>
+              <span className={styles.overlayTag}>FEATURED INSTALLATION</span>
+              <h4 className={styles.overlayTitle}>BiCE RISTORANTE SUITE</h4>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
-

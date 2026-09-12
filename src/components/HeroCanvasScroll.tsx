@@ -19,19 +19,32 @@ export default function HeroCanvasScroll() {
   const frameIndexRef = useRef(0);
   const requestRef = useRef<number | null>(null);
 
-  // Preload all 150 frame images into memory
+  // Preload all 150 frame images into memory with async decoding
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
-    let count = 0;
 
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const frameNum = String(i).padStart(4, '0');
       img.src = `/frames/frame_${frameNum}.jpg`;
-
-      img.onload = () => {
-        count++;
-      };
+      img.decoding = 'async'; // Critical for preventing main thread lockups
+      if (i === 1) {
+        img.onload = () => {
+          if (canvasRef.current) {
+            const ctx = canvasRef.current.getContext('2d', { alpha: false });
+            if (ctx && img.complete) {
+              const width = canvasRef.current.width;
+              const height = canvasRef.current.height;
+              const hRatio = width / img.width;
+              const vRatio = height / img.height;
+              const ratio = Math.max(hRatio, vRatio);
+              const centerShift_x = (width - img.width * ratio) / 2;
+              const centerShift_y = (height - img.height * ratio) / 2;
+              ctx.drawImage(img, 0, 0, img.width, img.height, centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
+            }
+          }
+        };
+      }
       loadedImages.push(img);
     }
     imagesRef.current = loadedImages;
@@ -45,9 +58,11 @@ export default function HeroCanvasScroll() {
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    // Set canvas dimensions on resize (not inside render loop!)
+    // Set canvas dimensions on resize
     const updateCanvasSize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // Hardcode DPR to 1. Canvas doesn't need retina resolution for fast-moving video sequences,
+      // and drawing 4K frames at 60fps causes massive GPU/CPU lag.
+      const dpr = 1;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       renderFrame();
@@ -57,13 +72,14 @@ export default function HeroCanvasScroll() {
       const currentImg = imagesRef.current[frameIndexRef.current];
       if (!currentImg || !currentImg.complete) return;
 
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = 1;
       const width = canvas.width / dpr;
       const height = canvas.height / dpr;
 
       ctx.save();
       ctx.scale(dpr, dpr);
-      ctx.clearRect(0, 0, width, height);
+      // We don't need clearRect because we draw the image with 'cover', completely filling the canvas
+      // ctx.clearRect(0, 0, width, height);
 
       // Cover scaling calculation
       const imgRatio = currentImg.width / currentImg.height;
@@ -88,6 +104,16 @@ export default function HeroCanvasScroll() {
 
     updateCanvasSize();
 
+    // Ensure the first frame draws as soon as it loads
+    const firstImg = imagesRef.current[0];
+    if (firstImg) {
+      if (firstImg.complete) {
+        renderFrame();
+      } else {
+        firstImg.addEventListener('load', renderFrame);
+      }
+    }
+
     // GSAP ScrollTrigger timeline - Pin hero section during frame sequence animation
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
@@ -95,7 +121,7 @@ export default function HeroCanvasScroll() {
       end: '+=2500', // 2500px scroll distance to complete full video animation
       pin: true,
       pinSpacing: true,
-      scrub: 0.15,
+      scrub: 0.15, // Small scrub for smoothing out mouse wheel increments
       onUpdate: (self) => {
         const nextIndex = Math.min(
           TOTAL_FRAMES - 1,
@@ -103,8 +129,8 @@ export default function HeroCanvasScroll() {
         );
         if (frameIndexRef.current !== nextIndex) {
           frameIndexRef.current = nextIndex;
-          if (requestRef.current) cancelAnimationFrame(requestRef.current);
-          requestRef.current = requestAnimationFrame(renderFrame);
+          // Render synchronously because GSAP's onUpdate is already inside its optimized rAF ticker
+          renderFrame();
         }
       },
     });
@@ -113,7 +139,6 @@ export default function HeroCanvasScroll() {
 
     return () => {
       st.kill();
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
       window.removeEventListener('resize', updateCanvasSize);
     };
   }, []);
@@ -122,7 +147,25 @@ export default function HeroCanvasScroll() {
     <div ref={containerRef} className={styles.heroSectionWrapper}>
       <div className={styles.stickyCanvasContainer}>
         {/* Full-bleed HTML5 Canvas Scroll Animation Layer */}
-        <canvas ref={canvasRef} className={styles.canvas} />
+        <canvas 
+          ref={canvasRef} 
+          className={styles.canvas} 
+          style={{ 
+            backgroundImage: "url('/frames/frame_0001.jpg')", 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center' 
+          }} 
+        />
+        
+        {/* High Visibility Text Overlay - Removed as requested by user */}
+
+        {/* Scroll Indicator */}
+        <div className={styles.scrollIndicator}>
+          <span>SCROLL</span>
+          <div className={styles.scrollDotContainer}>
+            <div className={styles.scrollDot} />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronRight, Plus, ArrowRight, Sparkles, MapPin, Calendar, Users, Building2 } from 'lucide-react';
+import { ArrowRight, MapPin, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './ProjectsSection.module.css';
 
 const projects = [
@@ -81,91 +81,181 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const scrollPosition = carouselRef.current.scrollLeft;
+    const cardWidth = carouselRef.current.offsetWidth * 0.85;
+    const newIndex = Math.round(scrollPosition / cardWidth);
+    if (newIndex !== activeMobileIndex && newIndex >= 0 && newIndex < projects.length) {
+      setActiveMobileIndex(newIndex);
+    }
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!carouselRef.current) return;
+    const cardWidth = carouselRef.current.offsetWidth * 0.85;
+    carouselRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth',
+    });
+    setActiveMobileIndex(index);
+  };
+
   return (
     <section id="projects" className={styles.section}>
+      {/* Background Image Layer (Desktop) */}
+      <div className={styles.backgroundLayer}>
+        {projects.map((project) => (
+          <img
+            key={`bg-${project.id}`}
+            src={project.image}
+            alt={project.title}
+            className={`${styles.bgImage} ${hoveredProject === project.id ? styles.activeBg : ''}`}
+          />
+        ))}
+        <div className={styles.bgOverlay}></div>
+      </div>
+
       <div className={styles.container}>
-        {/* Section Top Header */}
+        
+        {/* Top Header Row */}
         <div className={styles.topHeader}>
-          <div>
-            <span className={styles.subTitle}>
-              <Sparkles size={12} className={styles.titleSparkle} />
-              FEATURED PORTFOLIO
-            </span>
-            <h2 className={styles.title}>
-              Spaces We’ve <span className={styles.italicWord}>Engineered.</span>
-            </h2>
+          <div className={styles.headerLeft}>
+            <div className={styles.titleRow}>
+              <h2 className={styles.title}>
+                SPACES THAT <br/>
+                <span className={styles.titleGoldItalic}>PERFORM.</span>
+              </h2>
+              <div className={styles.titleLine}></div>
+            </div>
+          </div>
+          
+          <div className={styles.headerCenter}>
+            <p className={styles.headerDesc}>
+              From restaurants to resorts, we design and deliver world-class commercial kitchen spaces for the UAE's most ambitious hospitality brands.
+            </p>
+          </div>
+        </div>
+
+        {/* DESKTOP: Hover-Reveal Architectural List */}
+        <div className={styles.desktopListContainer}>
+          <div className={styles.projectListWrapper}>
+            {projects.map((project) => (
+              <Link
+                href={`/projects#project-${project.id}`}
+                key={project.id}
+                className={`${styles.listItem} ${hoveredProject === project.id ? styles.itemHovered : ''} ${hoveredProject && hoveredProject !== project.id ? styles.itemFaded : ''}`}
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <div className={styles.itemLeft}>
+                  <span className={styles.itemNum}>{project.id}</span>
+                  <h3 className={styles.itemTitle}>{project.title}</h3>
+                </div>
+                
+                <div className={styles.itemRight}>
+                  <div className={styles.metaInfo}>
+                    <span className={styles.metaItem}><MapPin size={12} className={styles.metaIcon} /> {project.location}</span>
+                    <span className={styles.metaItem}><Building2 size={12} className={styles.metaIcon} /> {project.clientName}</span>
+                  </div>
+                  <div className={styles.arrowCircle}>
+                    <ArrowRight size={20} />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* MOBILE: Touch Swipeable Snap Gallery */}
+        <div className={styles.mobileGalleryContainer}>
+          <div 
+            className={styles.mobileCarousel} 
+            ref={carouselRef}
+            onScroll={handleScroll}
+          >
+            {projects.map((project, idx) => (
+              <div key={`mobile-${project.id}`} className={styles.mobileCard}>
+                <div className={styles.mobileCardMedia}>
+                  <img src={project.image} alt={project.title} className={styles.mobileCardImg} />
+                  <div className={styles.mobileCardBadge}>
+                    <span>{project.id}</span> / <span>06</span>
+                  </div>
+                  <div className={styles.mobileCardGradient}></div>
+                </div>
+
+                <div className={styles.mobileCardContent}>
+                  <div className={styles.mobileMetaRow}>
+                    <span className={styles.mobileCategory}>{project.category}</span>
+                    <span className={styles.mobileLocation}>
+                      <MapPin size={10} /> {project.location}
+                    </span>
+                  </div>
+
+                  <h3 className={styles.mobileCardTitle}>{project.title}</h3>
+                  <p className={styles.mobileClientName}>{project.clientName}</p>
+
+                  <div className={styles.mobileCardFooter}>
+                    <Link href={`/projects#project-${project.id}`} className={styles.mobileCardBtn}>
+                      <span>VIEW SPECS</span>
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <Link href="/projects" className={styles.viewAllProjectsLink}>
-            <div className={styles.plusCircle}>
-              <Plus size={14} />
+          {/* Mobile Swipe Indicators & Arrows */}
+          <div className={styles.mobileControls}>
+            <div className={styles.mobileDots}>
+              {projects.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`${styles.dot} ${activeMobileIndex === idx ? styles.activeDot : ''}`}
+                  onClick={() => scrollToIndex(idx)}
+                  aria-label={`Go to project ${idx + 1}`}
+                />
+              ))}
             </div>
-            <span>EXPLORE ALL PROJECTS</span>
-          </Link>
+
+            <div className={styles.mobileArrows}>
+              <button 
+                className={styles.arrowBtn}
+                onClick={() => scrollToIndex(Math.max(0, activeMobileIndex - 1))}
+                disabled={activeMobileIndex === 0}
+                aria-label="Previous Project"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <button 
+                className={styles.arrowBtn}
+                onClick={() => scrollToIndex(Math.min(projects.length - 1, activeMobileIndex + 1))}
+                disabled={activeMobileIndex === projects.length - 1}
+                aria-label="Next Project"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div className={styles.sectionFooter}>
+          <div className={styles.footerLeft}>
+            <div className={styles.footerBars}>
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span className={styles.footerText}>
+              GLOBAL KITCHENS<br/>LOCAL IMPACT
+            </span>
+          </div>
         </div>
 
-        {/* 6 Cards Grid (3 Columns x 2 Rows) */}
-        <div className={styles.allProjectsGrid}>
-          {projects.map((project) => (
-            <div key={project.id} className={styles.projectCard}>
-              {/* Card Image Container with Hover Reveal */}
-              <div className={styles.cardImageWrapper}>
-                <img src={project.image} alt={project.title} className={styles.cardImage} />
-                <span className={styles.cardBadge}>{project.id}</span>
-                <span className={styles.categoryTag}>{project.category}</span>
-
-                {/* Rich Hover Glassmorphism Overlay */}
-                <div className={styles.hoverOverlay}>
-                  <span className={styles.hoverHighlight}>{project.highlight}</span>
-                  <div className={styles.specsList}>
-                    {project.specs.map((spec, i) => (
-                      <span key={i} className={styles.specPill}>{spec}</span>
-                    ))}
-                  </div>
-
-                  {/* Deep link directly to the target project on /projects page */}
-                  <Link href={`/projects#project-${project.id}`} className={styles.exploreLink}>
-                    <span>VIEW FULL SPECS</span>
-                    <ArrowRight size={12} />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Enriched Card Content Footer */}
-              <div className={styles.cardContent}>
-                <div>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <div className={styles.metaRow}>
-                    <span className={styles.projectLocation}>
-                      <MapPin size={11} className={styles.inlineIcon} />
-                      {project.location}
-                    </span>
-                    <span className={styles.projectYear}>
-                      <Calendar size={11} className={styles.inlineIcon} />
-                      {project.year}
-                    </span>
-                  </div>
-                  <div className={styles.clientCapacityRow}>
-                    <span className={styles.clientTag}>
-                      <Building2 size={11} className={styles.inlineIcon} />
-                      {project.clientName}
-                    </span>
-                  </div>
-                </div>
-
-                <Link 
-                  href={`/projects#project-${project.id}`} 
-                  className={styles.actionBtn} 
-                  aria-label={`View ${project.title} Details`}
-                >
-                  <Plus size={14} />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
-

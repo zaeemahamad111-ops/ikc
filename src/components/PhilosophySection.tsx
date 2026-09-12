@@ -17,13 +17,13 @@ export default function PhilosophySection() {
           </div>
 
           <div className={styles.sketchHeader}>
-            <span className={styles.subHeading}>WHY CHOOSE US</span>
+            <span className={styles.subHeading}>ABOUT IKC</span>
             <h2 className={styles.sketchTitle}>
-              Why Leading Chefs & Developers <br />
-              <span className={styles.italicWord}>Trust Italian Kitchen Concept.</span>
+              Italian Kitchen Expertise. <br />
+              <span className={styles.italicWord}>Complete Local Support.</span>
             </h2>
             <p className={styles.sketchDesc}>
-              We simplify your kitchen project. Instead of dealing with multiple suppliers, IKC provides complete turnkey support—from CAD design to Italian equipment supply, certified installation, and 24/7 maintenance.
+              With decades of experience in the UAE, we simplify your project by managing everything under one roof. We offer complete support—from initial consultation and custom kitchen design to equipment supply, certified installation, and dedicated after-sales service.
             </p>
 
             <div className={styles.buttonGroup}>
@@ -32,7 +32,7 @@ export default function PhilosophySection() {
                 <ArrowRight size={14} />
               </Link>
               <Link href="/contact" className={styles.secondaryCta}>
-                <span>REQUEST A QUOTE</span>
+                <span>CONTACT US</span>
               </Link>
             </div>
           </div>

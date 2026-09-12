@@ -13,23 +13,23 @@ export default function Footer() {
         <div className={styles.ctaContainer}>
           <span className={styles.ctaTag}>START A CONVERSATION</span>
           <h2 className={styles.ctaTitle}>
-            Let’s Build the Kitchen <br />
-            Behind Your <span className={styles.italicWord}>Success.</span>
+            Ready for your new <br />
+            commercial <span className={styles.italicWord}>kitchen?</span>
           </h2>
 
           <div className={styles.ctaBtnGroup}>
             {/* Primary CTA: Solid Gold Metallic Button */}
             <Link href="/contact" className={styles.primaryCta}>
-              <span>START A PROJECT</span>
+              <span>REQUEST A QUOTE</span>
               <ArrowRight size={16} />
             </Link>
 
             {/* Secondary CTA: Glassmorphic Outlined Button */}
             <Link href="/contact" className={styles.secondaryCta}>
               <div className={styles.iconCircle}>
-                <Calendar size={14} className={styles.calIcon} />
+                <MessageSquare size={14} className={styles.calIcon} />
               </div>
-              <span>DISCUSS YOUR VISION</span>
+              <span>CONTACT US</span>
             </Link>
           </div>
         </div>
@@ -41,20 +41,35 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={styles.brandCol}>
             <Link href="/" className={styles.brandLogo}>
-              <div className={styles.logoMark}>IKC</div>
-              <div className={styles.logoText}>
-                <span>ITALIAN</span>
-                <span>KITCHEN</span>
-                <span>CONCEPT</span>
-              </div>
+            <img src="/logo.png" alt="Italian Kitchen Concept Logo" className={styles.brandLogoImg} />
             </Link>
             <p className={styles.brandDesc}>
               Delivering professional kitchen solutions that combine Italian craftsmanship,
               innovative thermal engineering and seamless regional execution across UAE, GCC & East Africa.
             </p>
             <div className={styles.socialIcons}>
-              <a href="#" aria-label="Share"><Share2 size={16} /></a>
-              <a href="#" aria-label="Website"><Globe size={16} /></a>
+              {/* Instagram */}
+              <a href="https://www.instagram.com/italianconceptdubai/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              {/* Facebook */}
+              <a href="https://www.facebook.com/profile.php?id=100089129486488" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              {/* LinkedIn */}
+              <a href="https://www.linkedin.com/company/italianconceptdubai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -98,19 +113,29 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div className={styles.linkCol}>
-            <h3 className={styles.colTitle}>REGIONAL OFFICES</h3>
+            <h3 className={styles.colTitle}>OUR OFFICES</h3>
             <ul className={styles.contactList}>
-              <li>
+              <li style={{ alignItems: 'flex-start' }}>
+                <MapPin size={16} className={styles.goldIcon} style={{ marginTop: '2px' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ fontWeight: 600, color: '#FFFFFF' }}>Front Office:</span>
+                  <span>Wadi Al-Safa 3, KOA Canvas - Dubai</span>
+                </div>
+              </li>
+              <li style={{ alignItems: 'flex-start', marginTop: '0.5rem' }}>
+                <MapPin size={16} className={styles.goldIcon} style={{ marginTop: '2px' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  <span style={{ fontWeight: 600, color: '#FFFFFF' }}>Back Office:</span>
+                  <span>1 16 St - Al Twar Fifth - Al Twar 5 - Dubai</span>
+                </div>
+              </li>
+              <li style={{ marginTop: '0.5rem' }}>
                 <Phone size={14} className={styles.goldIcon} />
-                <span>+971 4 123 4567 (Dubai HQ)</span>
+                <span>+971 4 123 4567</span>
               </li>
               <li>
                 <Mail size={14} className={styles.goldIcon} />
                 <span>info@italiankitchenconcept.com</span>
-              </li>
-              <li>
-                <MapPin size={14} className={styles.goldIcon} />
-                <span>Dubai (UAE) | Manama (Bahrain) | Zanzibar (Tanzania)</span>
               </li>
             </ul>
           </div>

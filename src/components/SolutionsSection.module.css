@@ -64,7 +64,7 @@
 
 .blueprintWrapper {
   display: grid;
-  grid-template-columns: 310px 1fr 310px;
+  grid-template-columns: 290px 1fr 290px;
   gap: 2rem;
   align-items: center;
   position: relative;
@@ -100,7 +100,7 @@
 .leftSolutionsList, .rightSolutionsList {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
   position: relative;
   z-index: 14;
 }
@@ -108,110 +108,92 @@
 .solutionCard {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(18, 20, 24, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(20, 18, 16, 0.95) 0%, rgba(10, 9, 8, 0.98) 100%);
   backdrop-filter: blur(12px);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .solutionCard:hover, .activeCard {
-  background: rgba(197, 160, 89, 0.12);
-  border-color: var(--gold-primary);
-  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.18);
+  border-color: rgba(197, 160, 89, 0.3);
+  box-shadow: 0 8px 30px rgba(197, 160, 89, 0.12);
   transform: translateY(-2px);
 }
 
-.cardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.cardGlow {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 320px;
+  background: radial-gradient(ellipse at right, rgba(197, 160, 89, 0.25) 0%, rgba(197, 160, 89, 0.0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  border-right: 1px solid rgba(197, 160, 89, 0.4);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-.iconBox {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(197, 160, 89, 0.15);
-  border: 1px solid rgba(197, 160, 89, 0.3);
-  color: var(--gold-primary);
+.solutionCard:hover .cardGlow, .activeCard .cardGlow {
+  opacity: 1;
+}
+
+.cardTopRow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.25rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardIcon {
+  color: var(--gold-primary);
+  opacity: 0.8;
 }
 
 .num {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gold-primary);
   font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold-primary);
+  opacity: 0.8;
 }
 
 .itemTitle {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--text-light);
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .itemDesc {
   font-size: 0.8rem;
   line-height: 1.5;
-  color: #D8DCE6;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 2;
 }
 
-.specPillsGroup {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.specTag {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: #E2D2B0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(197, 160, 89, 0.2);
-  padding: 2px 8px;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.checkIcon {
-  color: var(--gold-primary);
-}
-
-.cardLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--gold-primary);
-  text-decoration: none;
-  margin-top: 0.25rem;
-  transition: all 0.2s ease;
-}
-
-.cardLink:hover {
-  color: #FFFFFF;
-  transform: translateX(3px);
-}
-
-/* Floorplan Interactive Area - Borderless 3D Floating Mockup */
+/* Floorplan Interactive Area */
 .floorplanContainer {
   position: relative;
-  height: 580px;
+  width: 100%;
   border-radius: 0;
   overflow: visible;
   border: none;
@@ -220,10 +202,10 @@
   perspective: 1000px;
 }
 
-.floorplanBg {
+.floorplanImg {
   width: 100%;
-  height: 100%;
-  background: url('/room-mock.png') center/contain no-repeat;
+  height: auto;
+  display: block;
   filter: brightness(1.08) contrast(1.08) drop-shadow(0 25px 35px rgba(0, 0, 0, 0.7));
   animation: subtlePulse 5s infinite ease-in-out;
 }

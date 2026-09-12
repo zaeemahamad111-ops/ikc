@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: 'Do you manufacture custom stainless steel fabrication in Italian standards?',
-    a: 'Yes. All our stainless steel units use 316L marine-grade stainless steel with laser-welded seamless hygienic radius jointing.',
+    a: 'Yes. All our stainless steel units are 316 and 304 grade with laser welded seamless hygienic radius jointing and more.',
   },
   {
     q: 'Do you offer after-sales maintenance in Dubai and Abu Dhabi?',

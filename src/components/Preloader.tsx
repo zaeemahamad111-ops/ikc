@@ -49,12 +49,7 @@ export default function Preloader() {
       <div className={styles.loaderContent}>
         {/* Animated Brand Logo */}
         <div className={styles.logoContainer}>
-          <div className={styles.logoMark}>IKC</div>
-          <div className={styles.logoText}>
-            <span>ITALIAN</span>
-            <span>KITCHEN</span>
-            <span>CONCEPT</span>
-          </div>
+          <img src="/logo.png" alt="Italian Kitchen Concept Logo" className={styles.brandLogoImg} />
         </div>
 
         <p className={styles.tagline}>ITALIAN DESIGN & THERMAL ENGINEERING</p>

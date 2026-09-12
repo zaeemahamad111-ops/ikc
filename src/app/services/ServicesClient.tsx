@@ -106,6 +106,22 @@ const servicesData = [
 ];
 
 export default function ServicesClient() {
+  React.useEffect(() => {
+    const handleHash = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const targetId = window.location.hash.replace('#', '');
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    };
+    
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   return (
     <div className={styles.pageWrapper}>
       <Navbar />

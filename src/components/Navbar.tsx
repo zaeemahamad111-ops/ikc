@@ -9,6 +9,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [heroFinished, setHeroFinished] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -18,10 +19,27 @@ export default function Navbar() {
       } else {
         setScrolled(false);
       }
+
+      // Check if hero animation is finished on homepage (2500px scroll)
+      if (pathname === '/') {
+        if (window.scrollY > 2400) {
+          setHeroFinished(true);
+        } else {
+          setHeroFinished(false);
+        }
+      }
     };
+
+    // Initial check
+    if (pathname !== '/') {
+      setHeroFinished(true);
+    } else {
+      handleScroll();
+    }
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -33,16 +51,11 @@ export default function Navbar() {
       <div className={styles.container}>
         {/* Brand Logo */}
         <Link href="/" className={styles.brand}>
-          <div className={styles.logoMark}>IKC</div>
-          <div className={styles.logoText}>
-            <span>ITALIAN</span>
-            <span>KITCHEN</span>
-            <span>CONCEPT</span>
-          </div>
+          <img src="/logo.png" alt="Italian Kitchen Concept Logo" className={styles.brandLogoImg} />
         </Link>
 
         {/* Center Nav Links (Desktop) */}
-        <nav className={styles.nav}>
+        <nav className={`${styles.nav} ${heroFinished ? styles.visible : ''}`}>
           <Link href="/" className={pathname === '/' ? styles.active : ''}>HOME</Link>
           <Link href="/about" className={pathname === '/about' ? styles.active : ''}>ABOUT US</Link>
           <Link href="/services" className={pathname === '/services' ? styles.active : ''}>SERVICES</Link>
