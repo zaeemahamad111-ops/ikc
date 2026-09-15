@@ -43,7 +43,7 @@ const processSteps = [
   {
     step: '04',
     title: 'On-Site Fitting & Commissioning',
-    desc: 'Our certified technical team completes mechanical fitting, ANSUL fire testing, and staff training.',
+    desc: 'Our certified technical team completes mechanical fitting, fire safety testing, and staff training.',
     icon: Wrench,
   },
   {
@@ -113,7 +113,7 @@ export default function AboutClient() {
                 <div className={styles.highlightCard}>
                   <Award size={22} className={styles.goldIcon} />
                   <h3>Full HACCP & Safety Compliance</h3>
-                  <p>Integrated ANSUL fire protection and UV air scrubbing.</p>
+                  <p>Integrated fire protection and UV air scrubbing.</p>
                 </div>
               </div>
             </div>

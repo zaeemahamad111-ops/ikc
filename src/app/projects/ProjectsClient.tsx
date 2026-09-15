@@ -78,7 +78,7 @@ const allProjectsList: Project[] = [
     scope: [
       'Polished Brass & Stainless Open Display Suite',
       'Central Cooking Island with Gantry Pass',
-      'ANSUL Automated Fire Suppression',
+      'Automated Fire Suppression Systems',
       'Silent Acoustic Canopy Extraction',
     ],
   },
@@ -108,11 +108,11 @@ const allProjectsList: Project[] = [
     capacity: '350 Resort Guests',
     location: 'Zanzibar, Tanzania',
     image: '/ikc-images/bawe zanzibar.jpg.jpeg',
-    description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and ANSUL automated fire suppression for high humidity island climates.',
+    description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and automated fire suppression for high humidity island climates.',
     scope: [
       'Anti-Corrosive Marine-Grade Stainless Construction',
       'Tropicalized Refrigeration Compressors',
-      'ANSUL Fire Protection & Scrubbing',
+      'Automated Fire Protection & Scrubbing',
       'Off-Grid Energy Efficient Thermal Suite',
     ],
   },

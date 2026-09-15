@@ -63,7 +63,7 @@ const projects = [
     year: '2025',
     capacity: '350 Resort Guests',
     image: '/ikc-images/bawe zanzibar.jpg.jpeg',
-    specs: ['Island Resort Suite', 'Marine Anti-Corrosion', 'ANSUL Fire System'],
+    specs: ['Island Resort Suite', 'Marine Anti-Corrosion', 'Fire Safety System'],
     highlight: 'Luxury Island Resort Complex',
   },
   {

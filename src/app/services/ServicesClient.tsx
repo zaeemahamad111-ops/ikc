@@ -67,7 +67,7 @@ const servicesData = [
     details: [
       'UV-C grease destruction & aerosol filter hood canopies',
       'Demand-controlled intelligent ventilation airflow (DCKV)',
-      'Fire suppression system integration (ANSUL certified)',
+      'Fire suppression system integration (Fire Safety Certified)',
       'Low-noise variable speed exhaust centrifuges',
     ],
   },
