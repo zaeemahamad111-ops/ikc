@@ -33,25 +33,25 @@
   position: absolute;
   top: 2.5rem;
   right: 2.5rem;
-  width: 70px;
-  height: 70px;
+  width: 78px;
+  height: 78px;
   border: 1px dashed rgba(197, 160, 89, 0.7);
   border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--gold-dark);
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(142, 112, 54, 0.08);
   z-index: 6;
 }
 
-.stampBadge small {
-  font-size: 0.42rem;
-  letter-spacing: 2px;
+.stampLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .sketchHeader {

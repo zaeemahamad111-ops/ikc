@@ -12,8 +12,7 @@ export default function PhilosophySection() {
         {/* Left Card: Cream sketch illustration panel */}
         <div className={styles.leftSketchCard}>
           <div className={styles.stampBadge}>
-            <span>IKC</span>
-            <small>ITALIA</small>
+            <img src="/logo.png" alt="IKC Logo" className={styles.stampLogoImg} />
           </div>
 
           <div className={styles.sketchHeader}>
