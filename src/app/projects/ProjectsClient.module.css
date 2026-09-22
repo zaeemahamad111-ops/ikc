@@ -66,9 +66,147 @@
 
 .filterBar {
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 3.5rem;
   flex-wrap: wrap;
+}
+
+.pillsRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 280px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--gold-primary);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--gold-primary);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(197, 160, 89, 0.2);
+}
+
+.pdfDownloadHeaderBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-primary);
+  color: #0A0B0D;
+  padding: 0.7rem 1.4rem;
+  border-radius: 40px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(197, 160, 89, 0.25);
+}
+
+.pdfDownloadHeaderBtn:hover {
+  background: #FFFFFF;
+  color: #0A0B0D;
+  transform: translateY(-2px);
+}
+
+.pdfDownloadHeaderBtnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 0.7rem 1.4rem;
+  border-radius: 40px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pdfDownloadHeaderBtnOutline:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+/* Reference List from PDF */
+.referencesContainer {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.referencesTitle {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.referencesDesc {
+  font-size: 0.9rem;
+  color: var(--text-muted-dark);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.referencesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.referenceItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.85rem 1.1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  color: #D8DCE6;
+  transition: all 0.3s ease;
+}
+
+.referenceItem:hover {
+  border-color: rgba(197, 160, 89, 0.4);
+  background: rgba(197, 160, 89, 0.06);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.refCheckIcon {
+  color: var(--gold-primary);
+  flex-shrink: 0;
 }
 
 .filterBtn {

@@ -6,14 +6,13 @@ import Footer from '@/components/Footer';
 import { 
   ArrowRight, 
   MapPin, 
-  Plus, 
-  ChevronRight, 
   Building2, 
-  Calendar, 
   Users, 
   X, 
   CheckCircle2,
-  FileText
+  FileText,
+  Search,
+  Download
 } from 'lucide-react';
 import styles from './ProjectsClient.module.css';
 
@@ -33,14 +32,99 @@ interface Project {
 const allProjectsList: Project[] = [
   {
     id: '01',
-    title: 'BICE BAHRAIN RESTAURANT',
+    title: 'JW MARRIOTT MARQUIS DUBAI',
+    category: 'Hotels',
+    clientName: 'JW Marriott Group',
+    year: '2024',
+    capacity: '1,500 Covers / Day',
+    location: 'Business Bay, Dubai, UAE',
+    image: '/pdf-images/company_page_9.jpg',
+    description: 'Turnkey culinary execution for signature dining venues at the award-winning JW Marriott Marquis Dubai, featuring refined high-output Italian thermal suites, cold rooms, and stainless steel pass counters.',
+    scope: [
+      'Heavy-Duty Modular Italian Thermal Ranges',
+      'Dual-Temperature Walk-In Cold Storage Complex',
+      'Bespoke AISI 304 Hygienic Pass Counters',
+      'HACCP Certified Air Filtration & UV Hood Canopies',
+    ],
+  },
+  {
+    id: '02',
+    title: 'AMITY UNIVERSITY CAMPUS',
+    category: 'Institutional',
+    clientName: 'Amity Education Group',
+    year: '2024',
+    capacity: '3,000+ Meals / Day',
+    location: 'Academic City, Dubai, UAE',
+    image: '/pdf-images/company_page_10.jpg',
+    description: 'High-capacity central production kitchen and dining hall installation engineered for Amity University’s global benchmarked campus serving thousands of students and faculty daily.',
+    scope: [
+      'High-Volume Steam Boiling Pans & Tilting Bratt Pans',
+      'Continuous Flight-Type Conveyor Dishwashing Line',
+      'Walk-In Deep Freezing & Cold Storage Suites',
+      'Central Chemical Dosing & Hygiene Stations',
+    ],
+  },
+  {
+    id: '03',
+    title: 'VOLANTE LUXURY PENTHOUSE CHEF SUITE',
+    category: 'Residential',
+    clientName: 'Volante Executive Tower',
+    year: '2024',
+    capacity: 'Private Luxury Suite',
+    location: 'Business Bay, Dubai, UAE',
+    image: '/pdf-images/company_page_11.jpg',
+    description: 'Bespoke private luxury penthouse chef kitchen featuring custom burnished brass trims, dual-zone climate wine cellar, central island cooking block, and whisper-quiet ventilation.',
+    scope: [
+      'Bespoke Italian Residential Chef Line',
+      'Custom Climate-Controlled Wine Cellar Unit',
+      'Whisper-Quiet Acoustic Canopy Extraction',
+      'Custom Burnished Brass & Stainless Fabrication',
+    ],
+  },
+  {
+    id: '04',
+    title: 'POLICLINICO GEMELLI HOSPITAL',
+    category: 'Institutional',
+    clientName: 'Gemelli University Hospital',
+    year: '2023',
+    capacity: '4,000 Patients / Day',
+    location: 'Rome, Italy',
+    image: '/pdf-images/company_page_12.jpg',
+    description: 'Industrial healthcare dietary kitchen and automated sanitizing suite engineered for high-volume dietary compliance, sterile tray assembly, and precise thermal retention.',
+    scope: [
+      'Automated Meal Tray Assembly & Conveyor Line',
+      'Thermal Disinfection Rinse & Sanitization Units',
+      'Stainless Steel Hygienic Radius Jointing Workstations',
+      'HACCP Continuous Temperature Tracking System',
+    ],
+  },
+  {
+    id: '05',
+    title: 'TORO TORO & BUDDHA BAR - GROSVENOR HOUSE',
+    category: 'Hospitality',
+    clientName: 'Grosvenor House Luxury Resort',
+    year: '2025',
+    capacity: '850 Covers / Day',
+    location: 'Dubai Marina, UAE',
+    image: '/pdf-images/company_page_13.jpg',
+    description: 'Architectural open display kitchen with polished brass trims, central island cooking block with gantry pass, and high-efficiency UV grease destruction hoods.',
+    scope: [
+      'Polished Brass & Stainless Open Display Suite',
+      'Central Cooking Island with Gantry Pass',
+      'Automated Fire Suppression Systems',
+      'Silent Acoustic Canopy Extraction',
+    ],
+  },
+  {
+    id: '06',
+    title: 'BICE RESTAURANT & SAPORI DI BICE',
     category: 'Hospitality',
     clientName: 'BiCE Hospitality Group',
     year: '2024',
-    capacity: '450 Covers / Day',
-    location: 'Manama, Bahrain',
+    capacity: '500 Covers / Day',
+    location: 'Manama, Bahrain & City Walk, Dubai',
     image: '/ikc-images/Bice Bahrain IC.jpeg',
-    description: 'Turnkey luxury Italian restaurant kitchen installation with custom stainless steel counters, thermal cooking blocks, and HACCP safety certification.',
+    description: 'Turnkey luxury Italian restaurant kitchen installation with custom stainless steel counters, thermal cooking blocks, pasta boilers, and HACCP safety certification.',
     scope: [
       'Heavy-Duty Italian Thermal Range Suite',
       'Bespoke AISI 304 Stainless Steel Pass Counter',
@@ -49,7 +133,92 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '02',
+    id: '07',
+    title: 'EMIRATES AIRLINE FIRST CLASS LOUNGE & HQ',
+    category: 'Institutional',
+    clientName: 'Emirates Group',
+    year: '2024',
+    capacity: '5,000+ Meals / Day',
+    location: 'Terminal 3 & Airport Road, Dubai, UAE',
+    image: '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+    description: 'High-throughput culinary prep facilities, Emirates Flight Training catering kitchen, and Emirates First Class Lounge food service suites engineered for intense continuous service.',
+    scope: [
+      'High-Output Induction & Boiling Kettle Suites',
+      'Industrial Rapid Blast Chilling Chambers',
+      'Automated Flight Type Conveyor Washers',
+      'Stainless Steel Mobile Cart Roll-In Gantries',
+    ],
+  },
+  {
+    id: '08',
+    title: 'ARMANI CAFÉ & ATELIER DES ARTISTES',
+    category: 'Hospitality',
+    clientName: 'Armani Group & Ginza',
+    year: '2024',
+    capacity: '400 Covers / Day',
+    location: 'Dubai Mall & Mall of the Emirates, UAE',
+    image: '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
+    description: 'Bespoke open display culinary workstations, espresso bar gantries, and pastry prep lines engineered to Armani luxury brand specifications.',
+    scope: [
+      'Polished Mirror Stainless Steel Prep Counters',
+      'Precision Under-Counter Beverage Refrigeration',
+      'High-Speed Sanitizing Glasswashing Stations',
+      'Custom Architectural Brass Over-Counter Gantries',
+    ],
+  },
+  {
+    id: '09',
+    title: 'BAWE ISLAND LUXURY RESORT',
+    category: 'Hotels',
+    clientName: 'Bawe Zanzibar Luxury Resort',
+    year: '2025',
+    capacity: '350 Resort Guests',
+    location: 'Zanzibar, Tanzania',
+    image: '/ikc-images/bawe zanzibar.jpg.jpeg',
+    description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and automated fire suppression for high humidity island climates.',
+    scope: [
+      'Anti-Corrosive Marine-Grade Stainless Construction',
+      'Tropicalized Refrigeration Compressors',
+      'Automated Fire Protection & Scrubbing',
+      'Off-Grid Energy Efficient Thermal Suite',
+    ],
+  },
+  {
+    id: '10',
+    title: 'LE ROYAL MÉRIDIEN & MAYA MEXICAN RESTAURANT',
+    category: 'Hotels',
+    clientName: 'Le Méridien Hotel & Resorts',
+    year: '2024',
+    capacity: '1,000 Meals / Day',
+    location: 'Jumeirah Beach, Dubai, UAE',
+    image: '/ikc-images/All day dining Ic.jpeg',
+    description: 'High-capacity hotel resort cooking suites, specialty charcoal grill stations, and open show-kitchen installations for fine dining resort venues.',
+    scope: [
+      'Specialty Charcoal & Lava Stone Grill Stations',
+      'Live Show-Cooking Buffet Counters',
+      'Multi-Zone Induction Wok Modules',
+      'Walk-In Cold Storage & Deep Freezing Complex',
+    ],
+  },
+  {
+    id: '11',
+    title: 'ST. REGIS RESORT & WESTIN LUXURY SUITES',
+    category: 'Hotels',
+    clientName: 'Marriott International',
+    year: '2024',
+    capacity: '700 Guests / Day',
+    location: 'Le Morne, Mauritius',
+    image: '/ikc-images/All day dining Ic.jpeg',
+    description: 'Tropicalized luxury resort kitchen facilities featuring coastal anti-corrosion stainless steel, high-capacity prep counters, and central dishwashing suites.',
+    scope: [
+      'Coastal Marine Grade 316 Stainless Steel Suites',
+      'Tropicalized Dual-Chiller Cold Storage',
+      'UV Canopy Exhaust Ventilation',
+      'Automated Pot & Dishwashing Lines',
+    ],
+  },
+  {
+    id: '12',
     title: 'STEAKHOUSE CHEF SUITE',
     category: 'Hospitality',
     clientName: 'Downtown Prime Steaks',
@@ -66,109 +235,24 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '03',
-    title: 'TORO TORO ITALIAN KITCHEN',
+    id: '13',
+    title: 'ROBERTO’S & MERCATO DIFC',
     category: 'Hospitality',
-    clientName: 'Grosvenor House Luxury Resort',
-    year: '2025',
-    capacity: '750 Covers / Day',
-    location: 'Dubai Marina, UAE',
-    image: '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
-    description: 'Architectural open display kitchen with polished brass trims, custom island cooking suite, and UV grease extraction canopy hoods.',
-    scope: [
-      'Polished Brass & Stainless Open Display Suite',
-      'Central Cooking Island with Gantry Pass',
-      'Automated Fire Suppression Systems',
-      'Silent Acoustic Canopy Extraction',
-    ],
-  },
-  {
-    id: '04',
-    title: 'ALL-DAY RESORT DINING',
-    category: 'Hotels',
-    clientName: 'Grand Hyatt Beach Resort',
+    clientName: 'Roberto’s Hospitality',
     year: '2024',
-    capacity: '1,200 Meals / Day',
-    location: 'Abu Dhabi, UAE',
-    image: '/ikc-images/All day dining Ic.jpeg',
-    description: 'Live buffet cooking counters, induction wok stations, walk-in cold storage rooms, and automated continuous conveyor dishwashers.',
-    scope: [
-      'Live Show-Cooking Buffet Counters',
-      'Multi-Zone Induction Wok Modules',
-      'Walk-In Cold Storage & Deep Freezing Complex',
-      'High-Capacity Flight Type Conveyor Washers',
-    ],
-  },
-  {
-    id: '05',
-    title: 'BAWE ISLAND RESORT',
-    category: 'Hotels',
-    clientName: 'Bawe Zanzibar Luxury Resort',
-    year: '2025',
-    capacity: '350 Resort Guests',
-    location: 'Zanzibar, Tanzania',
-    image: '/ikc-images/bawe zanzibar.jpg.jpeg',
-    description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and automated fire suppression for high humidity island climates.',
-    scope: [
-      'Anti-Corrosive Marine-Grade Stainless Construction',
-      'Tropicalized Refrigeration Compressors',
-      'Automated Fire Protection & Scrubbing',
-      'Off-Grid Energy Efficient Thermal Suite',
-    ],
-  },
-  {
-    id: '06',
-    title: 'LEBANESE CUISINE KITCHEN',
-    category: 'Hospitality',
-    clientName: 'Al Hamra Hospitality',
-    year: '2024',
-    capacity: '500 Covers / Day',
-    location: 'Dubai, UAE',
-    image: '/ikc-images/Lebanese Restaurant.jpeg',
-    description: 'High-volume regional cuisine kitchen with custom wood-fired oven integration, prep stations, and sanitizing suites.',
-    scope: [
-      'Custom Wood & Charcoal Oven Integration',
-      'Mezze Cold Prep Stainless Workstations',
-      'High-Speed Sanitizing Pot Washers',
-      'Automated Greasetrap Separation',
-    ],
-  },
-  {
-    id: '07',
-    title: 'VOLANTE LUXURY RESIDENTIAL',
-    category: 'Residential',
-    clientName: 'Volante Executive Tower',
-    year: '2024',
-    capacity: 'Private Penthouse Suite',
-    location: 'Business Bay, Dubai',
-    image: '/ikc-images/volante 1 .jpeg',
-    description: 'Bespoke private villa chef kitchen with custom brass accents, wine refrigeration cellar, and whisper-quiet ventilation.',
-    scope: [
-      'Bespoke Italian Residential Chef Line',
-      'Custom Climate Wine Cellar Unit',
-      'Whisper-Quiet 38dB Extraction Canopy',
-      'Custom Burnished Brass Fabrication',
-    ],
-  },
-  {
-    id: '08',
-    title: 'WINE BAR & TAPAS LOUNGE',
-    category: 'Hospitality',
-    clientName: 'Marriott Marquis Lounge',
-    year: '2024',
-    capacity: '300 Guests',
-    location: 'Dubai, UAE',
+    capacity: '550 Covers / Day',
+    location: 'The Galleria Abu Dhabi & DIFC Dubai, UAE',
     image: '/ikc-images/wine bar IC ncs.jpeg',
-    description: 'Architectural stainless steel cocktail bar modules, under-counter refrigeration drawers, and rapid glasswashing units.',
+    description: 'Fine dining Italian culinary suites, wine display cellars, cocktail bar modules, and custom prep workstations for award-winning venues.',
     scope: [
-      'Ergonomic Cocktail Station Modules',
+      'Ergonomic Cocktail & Wine Station Modules',
       'Dual-Zone Wine & Beverage Drawers',
       'Rapid 90-Second Glass Sanitizing Suite',
       'LED Ambient Backlit Gantry Racks',
     ],
   },
   {
-    id: '09',
+    id: '14',
     title: 'BOULANGERIE & ARTISAN BAKERY',
     category: 'Catering',
     clientName: 'Artisan Bakery Co.',
@@ -176,7 +260,7 @@ const allProjectsList: Project[] = [
     capacity: '1,500 Pastries / Day',
     location: 'Abu Dhabi, UAE',
     image: '/ikc-images/Buolangerie ICK.jpeg',
-    description: 'Artisan bakery production layout with deck ovens, climate-controlled proofing cabinets, and stainless steel prep sinks.',
+    description: 'Artisan bakery production layout with deck ovens, climate-controlled proofing cabinets, and granite-top pastry prep tables.',
     scope: [
       'Multi-Deck Electric Steam Ovens',
       'Humidity-Controlled Proofing Chambers',
@@ -185,15 +269,15 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '10',
-    title: 'COMMERCIAL CATERING FACILITY',
+    id: '15',
+    title: 'COMMERCIAL CATERING & CENTRAL PRODUCTION FACILITY',
     category: 'Catering',
     clientName: 'Emirates Catering Group',
     year: '2024',
     capacity: '2,500 Meals / Day',
     location: 'Sharjah, UAE',
     image: '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
-    description: 'High-throughput central production kitchen capable of 2,500+ meals per day with continuous flight-type dishwashing.',
+    description: 'High-throughput central production kitchen capable of 2,500+ meals per day with continuous flight-type dishwashing and blast chilling.',
     scope: [
       'Industrial Tilting Boiling Pans & Bratt Pans',
       'Continuous Flight Dishwashing System',
@@ -203,10 +287,42 @@ const allProjectsList: Project[] = [
   },
 ];
 
-const categories = ['All', 'Hospitality', 'Hotels', 'Residential', 'Catering'];
+const referenceClientsFromPDF = [
+  'JW Marriott Marquis - Dubai, UAE',
+  'Grosvenor House I & II - Dubai, UAE',
+  'Buddha Bar - Grosvenor House, Dubai, UAE',
+  'Toro Toro - Grosvenor House, Dubai, UAE',
+  'Armani Cafè - Dubai Mall & MOE, UAE',
+  'Emirates Flight Training & HQ - Dubai, UAE',
+  'Emirates First Class Lounge T3 - Dubai, UAE',
+  'Amity University - Dubai Academic City, UAE',
+  'Volante - Business Bay, Dubai, UAE',
+  'BiCE Restaurant & Sapori Di Bice - Bahrain & Dubai',
+  'Le Méridien Hotel & Conference Centre - Dubai, UAE',
+  'Meydan Hotel - Dubai, UAE',
+  'Mövenpick - Palm Jumeirah, Dubai, UAE',
+  'St. Regis Resort - Mauritius',
+  'Dusit Thani - Sheikh Zayed Road, Dubai, UAE',
+  'Crowne Plaza - Manama, Bahrain',
+  'The Diplomat Radisson Blu Hotel - Bahrain',
+  'Regency Intercontinental - Manama, Bahrain',
+  'Gulf Hotel - Manama, Bahrain',
+  'Arjaan Hotel by Rotana - Manama, Bahrain',
+  'Baker and Spice - Souk Al Bahar, Dubai, UAE',
+  'Roberto’s - DIFC Dubai & Galleria Abu Dhabi',
+  'Grand Hyatt Beach Resort - Abu Dhabi, UAE',
+  'Bawe Island Resort - Zanzibar, Tanzania',
+  'Policlinico Gemelli Hospital - Rome, Italy',
+  'Al Maha Desert Resort & Spa - Dubai, UAE',
+  'Jamie’s Italian - Dubai, UAE',
+  'Maya Mexican Restaurant - Le Royal Méridien, Dubai',
+];
+
+const categories = ['All', 'Hotels', 'Hospitality', 'Residential', 'Catering', 'Institutional'];
 
 export default function ProjectsClient() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
@@ -224,17 +340,19 @@ export default function ProjectsClient() {
       }
     };
     
-    // Check on mount
     handleHash();
-
-    // Check on hashchange
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  const filteredProjects = activeCategory === 'All'
-    ? allProjectsList
-    : allProjectsList.filter(p => p.category === activeCategory);
+  const filteredProjects = allProjectsList.filter((project) => {
+    const matchesCategory = activeCategory === 'All' || project.category === activeCategory;
+    const matchesSearch = searchQuery === '' || 
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.location.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className={styles.pageWrapper}>
@@ -243,32 +361,68 @@ export default function ProjectsClient() {
       {/* Hero Header */}
       <section className={styles.heroSection}>
         <div className={styles.heroContainer}>
-          <span className={styles.subTag}>PORTFOLIO SHOWCASE</span>
+          <span className={styles.subTag}>OFFICIAL PORTFOLIO & REFERENCE LIST</span>
           <h1 className={styles.heroTitle}>
             The Kitchens Behind <br />
             <span className={styles.italicWord}>Great Experiences.</span>
           </h1>
           <p className={styles.heroDesc}>
             Explore our portfolio of completed turnkey commercial kitchens, luxury hotel dining suites, 
-            and high-performance catering installations across the UAE, Bahrain & Tanzania.
+            institutional dining halls, and high-performance catering installations across the UAE, GCC & East Africa.
           </p>
+
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <a
+              href="/Company-profile_V2_NERO.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className={styles.pdfDownloadHeaderBtn}
+            >
+              <Download size={15} />
+              <span>DOWNLOAD COMPANY PROFILE PDF (12.4 MB)</span>
+            </a>
+            <a
+              href="/Villa-IC_V2_.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className={styles.pdfDownloadHeaderBtnOutline}
+            >
+              <Download size={15} />
+              <span>PRIVATE VILLA SOLUTIONS PDF (4.8 MB)</span>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Projects Grid Section */}
       <section className={styles.contentSection}>
         <div className={styles.container}>
-          {/* Category Filter Pills */}
+          {/* Category Filter Pills & Search Bar */}
           <div className={styles.filterBar}>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeFilter : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
+            <div className={styles.pillsRow}>
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  className={`${styles.filterBtn} ${activeCategory === cat ? styles.activeFilter : ''}`}
+                  onClick={() => setActiveCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.searchBox}>
+              <Search size={14} className={styles.searchIcon} />
+              <input
+                type="text"
+                placeholder="Search project, hotel, client, or city..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={styles.searchInput}
+              />
+            </div>
           </div>
 
           {/* Cards Grid */}
@@ -320,11 +474,30 @@ export default function ProjectsClient() {
                       }}
                     >
                       <FileText size={14} />
+                      <span style={{ fontSize: '0.65rem', marginLeft: '4px' }}>SPECS</span>
                     </button>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Verified Reference List from PDF */}
+          <div className={styles.referencesContainer}>
+            <span className={styles.subTag}>COMPLETE CLIENT REFERENCE LIST</span>
+            <h2 className={styles.referencesTitle}>Delivered Projects & Hotel References</h2>
+            <p className={styles.referencesDesc}>
+              With over 30 years of combined engineering excellence, Italian Concept (IC) has delivered major culinary projects for world-renowned brands.
+            </p>
+
+            <div className={styles.referencesGrid}>
+              {referenceClientsFromPDF.map((client, idx) => (
+                <div key={idx} className={styles.referenceItem}>
+                  <CheckCircle2 size={14} className={styles.refCheckIcon} />
+                  <span>{client}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -413,4 +586,3 @@ export default function ProjectsClient() {
     </div>
   );
 }
-
