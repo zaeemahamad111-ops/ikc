@@ -120,7 +120,7 @@ export default function AboutClient() {
 
             <div className={styles.storyRight}>
               <div className={styles.imageCard}>
-                <img src="/section-2-dark-kitchen.png" alt="IKC Commercial Kitchen Suite" className={styles.storyImg} />
+                <img src="/section-2-new-kitchen.jpg" alt="IKC Commercial Kitchen Suite" className={styles.storyImg} />
                 <div className={styles.badgeBox}>
                   <span className={styles.badgeNum}>40+</span>
                   <span className={styles.badgeLabel}>Turnkey Projects Delivered</span>

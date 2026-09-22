@@ -195,8 +195,8 @@
 .showcaseImageBg {
   position: absolute;
   inset: 0;
-  background: url('/section-2-dark-kitchen.png') center/cover no-repeat;
-  filter: brightness(0.85) contrast(1.1);
+  background: url('/section-2-new-kitchen.jpg') center/cover no-repeat;
+  filter: brightness(0.9) contrast(1.05);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
