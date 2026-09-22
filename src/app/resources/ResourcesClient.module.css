@@ -56,7 +56,13 @@
 }
 
 .contentSection {
-  padding: 5rem 3rem 6rem;
+  padding: 5rem 3rem 4rem;
+}
+
+.technicalSection {
+  padding: 3rem 3rem 6rem;
+  background: #090A0C;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .container {
@@ -82,6 +88,194 @@
   margin-bottom: 3rem;
 }
 
+/* Featured PDF Company Profile Cards Grid */
+.profilesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.profileCard {
+  background: var(--bg-dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profileCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 160, 89, 0.15);
+}
+
+.coverBox {
+  position: relative;
+  height: 100%;
+  min-height: 320px;
+  background: #0A0B0D;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profileCard:hover .coverImg {
+  transform: scale(1.06);
+}
+
+.coverBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(10, 11, 13, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: var(--gold-primary);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+}
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 11, 13, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.coverBox:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.previewIconBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.cardContent {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.categoryBadge {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.pageCount {
+  font-size: 0.72rem;
+  color: var(--text-muted-dark);
+}
+
+.profileTitle {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+
+.profileSubtitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+.profileDesc {
+  font-size: 0.85rem;
+  color: #B5B9C5;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.cardActionRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.downloadPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-primary);
+  color: #0A0B0D;
+  padding: 0.65rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.25);
+}
+
+.downloadPrimaryBtn:hover {
+  background: #FFFFFF;
+  color: #0A0B0D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.previewSecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  padding: 0.65rem 1.1rem;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.previewSecondaryBtn:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+/* Additional Technical Specifications Grid */
 .downloadsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -91,8 +285,8 @@
 .downloadCard {
   background: var(--bg-dark-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 2.5rem;
-  border-radius: 6px;
+  padding: 2.25rem;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,12 +302,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .iconBox {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(197, 160, 89, 0.1);
   border: 1px solid rgba(197, 160, 89, 0.3);
@@ -126,17 +320,9 @@
   color: var(--gold-primary);
 }
 
-.categoryBadge {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--gold-primary);
-  text-transform: uppercase;
-}
-
 .cardTitle {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 400;
   color: var(--text-light);
   margin-bottom: 0.75rem;
@@ -146,7 +332,7 @@
   font-size: 0.85rem;
   color: var(--text-muted-dark);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .cardFooter {
@@ -170,10 +356,11 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-light);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 30px;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 1px;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -184,6 +371,7 @@
   color: var(--bg-dark);
 }
 
+/* FAQ Section */
 .faqSection {
   padding: 5rem 3rem 7rem;
   background: #0D0E12;
@@ -200,7 +388,7 @@
   background: var(--bg-dark-card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 2rem;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .faqHeader {
@@ -223,8 +411,249 @@
   padding-left: 2.25rem;
 }
 
+/* Interactive PDF Page Viewer Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 11, 13, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modalCard {
+  background: #121418;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modalHeader {
+  padding: 1.5rem 2rem;
+  background: #0A0B0D;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalSubTag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gold-primary);
+  display: block;
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.modalControlsRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.modalDownloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-primary);
+  color: #0A0B0D;
+  padding: 0.55rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.modalDownloadBtn:hover {
+  background: #FFFFFF;
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.modalBody {
+  padding: 1.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.viewerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navPageBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--gold-primary);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navPageBtn:hover:not(:disabled) {
+  background: var(--gold-primary);
+  color: #0A0B0D;
+}
+
+.navPageBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.activePageFrame {
+  position: relative;
+  max-height: 58vh;
+  display: flex;
+  justify-content: center;
+  background: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activePageImg {
+  max-height: 58vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.pageIndicatorBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(10, 11, 13, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.thumbnailsBar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.thumbBtn {
+  position: relative;
+  width: 60px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.thumbActive {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbLabel {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFF;
+  font-size: 0.55rem;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
 @media (max-width: 1024px) {
+  .profilesGrid {
+    grid-template-columns: 1fr;
+  }
   .downloadsGrid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileCard {
+    grid-template-columns: 1fr;
+  }
+  .coverBox {
+    min-height: 220px;
+  }
+  .cardContent {
+    padding: 1.5rem;
+  }
+  .heroSection {
+    padding: 8rem 1.5rem 4rem;
+  }
+  .contentSection, .technicalSection, .faqSection {
+    padding: 3.5rem 1.5rem;
+  }
+  .modalCard {
+    max-height: 95vh;
+  }
+  .modalHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .activePageFrame, .activePageImg {
+    max-height: 45vh;
   }
 }

@@ -103,10 +103,10 @@ export default function Footer() {
           <div className={styles.linkCol}>
             <h3 className={styles.colTitle}>RESOURCES</h3>
             <ul>
-              <li><Link href="/resources">Brochures</Link></li>
-              <li><Link href="/resources">Catalogs</Link></li>
-              <li><Link href="/resources">Maintenance</Link></li>
-              <li><Link href="/resources">Spare Parts</Link></li>
+              <li><a href="/Company-profile_V2_NERO.pdf" target="_blank" rel="noopener noreferrer">Commercial &amp; Laundry Profile (PDF)</a></li>
+              <li><a href="/Villa-IC_V2_.pdf" target="_blank" rel="noopener noreferrer">Private Villa Solutions (PDF)</a></li>
+              <li><Link href="/resources">Technical Catalogs</Link></li>
+              <li><Link href="/resources">Maintenance Guide</Link></li>
               <li><Link href="/resources">FAQ</Link></li>
             </ul>
           </div>
