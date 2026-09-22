@@ -4,6 +4,7 @@ import PhilosophySection from '@/components/PhilosophySection';
 import SolutionsSection from '@/components/SolutionsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import StatsSection from '@/components/StatsSection';
+import BrandLogosMarquee from '@/components/BrandLogosMarquee';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <SolutionsSection />
       <ProjectsSection />
       <StatsSection />
+      <BrandLogosMarquee />
       <Footer />
     </main>
   );
