@@ -51,8 +51,8 @@ export default function PhilosophySection() {
           <div className={styles.showcaseImageBg} />
           <div className={styles.showcaseOverlay} />
           <div className={styles.showcaseBadge}>
-            <span className={styles.badgeTag}>PREMIERE INSTALLATION</span>
-            <h3 className={styles.badgeTitle}>Master Italian Thermal Kitchen Suite</h3>
+            <span className={styles.badgeTag}>SIGNATURE INSTALLATION</span>
+            <h3 className={styles.badgeTitle}>Italian Design, Engineered for Service</h3>
           </div>
         </div>
       </div>

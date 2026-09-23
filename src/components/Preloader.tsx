@@ -40,7 +40,7 @@ export default function Preloader() {
           <img src="/logo.png" alt="Italian Kitchen Concept Logo" className={styles.brandLogoImg} />
         </div>
 
-        <p className={styles.tagline}>ITALIAN DESIGN &amp; THERMAL ENGINEERING</p>
+        <p className={styles.tagline}>PROFESSIONAL KITCHEN SOLUTIONS</p>
 
         {/* 5-Second Glowing Gold Loading Bar */}
         <div className={styles.progressBarContainer}>

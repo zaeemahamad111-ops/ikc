@@ -36,7 +36,18 @@ const stats = [
 ];
 
 const clientLogos = [
-  "BiCE RISTORANTE", "TORO TORO", "BAWE ISLAND", "JUMEIRAH RESORTS", "MARRIOTT HOTEL", "GRAND HYATT", "VOLANTE TOWER"
+  "EMIRATES GROUP", 
+  "MARRIOTT GROUP", 
+  "RADISSON BLU", 
+  "JA RESORT", 
+  "KURUMATHI MALDIVES", 
+  "LE MERIDIEN MAURITIUS", 
+  "BiCE RISTORANTE", 
+  "TORO TORO", 
+  "BAWE ISLAND", 
+  "JUMEIRAH RESORTS", 
+  "GRAND HYATT", 
+  "VOLANTE TOWER"
 ];
 
 export default function StatsSection() {
@@ -92,7 +103,7 @@ export default function StatsSection() {
         {/* Partners Showcase Band */}
         <div className={styles.partnersContainer}>
           <div className={styles.partnersHeader}>
-            <span className={styles.partnersTag}>TRUSTED BY PREMIERE HOSPITALITY BRANDS</span>
+            <span className={styles.partnersTag}>TRUSTED BY LEADING BRANDS</span>
             <div className={styles.dividerLine}></div>
           </div>
           
