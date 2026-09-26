@@ -136,44 +136,91 @@
 
 .scrollIndicator {
   position: absolute;
-  right: 4rem;
-  bottom: 3rem;
+  left: 4.5rem;
+  bottom: 2.2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .scrollIndicator span {
-  writing-mode: vertical-rl;
-  font-size: 0.65rem;
+  writing-mode: horizontal-tb;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #D1D5E0;
   text-transform: uppercase;
 }
 
 .scrollDotContainer {
-  width: 20px;
-  height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
+  position: relative;
+  width: 1px;
+  height: 48px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  padding-top: 0;
 }
 
 .scrollDot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 7px;
+  border-radius: 2px;
   background-color: var(--gold-primary);
-  animation: pulseScroll 1.8s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--gold-primary);
+  animation: pulseScroll 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
 @keyframes pulseScroll {
-  0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(12px); opacity: 0.3; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% { top: 0%; opacity: 0; }
+  30% { opacity: 1; }
+  100% { top: 80%; opacity: 0; }
+}
+
+.skipButton {
+  position: absolute;
+  right: 4.5rem;
+  bottom: 2.2rem;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.4rem;
+  background: rgba(18, 20, 24, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.skipButton:hover {
+  background: rgba(197, 160, 89, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateX(3px);
+  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.3);
+}
+
+.arrowIcon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.skipButton:hover .arrowIcon {
+  transform: translateX(3px);
 }
 
 @media (max-width: 768px) {
@@ -200,6 +247,13 @@
     justify-content: center;
   }
   .scrollIndicator {
-    display: none;
+    left: 1.5rem;
+    bottom: 1.5rem;
+  }
+  .skipButton {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.65rem;
   }
 }

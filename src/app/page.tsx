@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import HeroStaticSection from '@/components/HeroStaticSection';
 import HeroCanvasScroll from '@/components/HeroCanvasScroll';
 import PhilosophySection from '@/components/PhilosophySection';
 import SolutionsSection from '@/components/SolutionsSection';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main style={{ position: 'relative', width: '100%' }}>
       <Navbar />
+      <HeroStaticSection />
       <HeroCanvasScroll />
       <PhilosophySection />
       <SolutionsSection />

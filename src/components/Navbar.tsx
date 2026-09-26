@@ -76,7 +76,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center Nav Links (Desktop) */}
-        <nav className={`${styles.nav} ${heroFinished ? styles.visible : ''}`}>
+        <nav className={styles.nav}>
           <Link href="/" className={pathname === '/' ? styles.active : ''}>HOME</Link>
           <Link href="/about" className={pathname === '/about' ? styles.active : ''}>ABOUT US</Link>
           <Link href="/services" className={pathname === '/services' ? styles.active : ''}>SERVICES</Link>

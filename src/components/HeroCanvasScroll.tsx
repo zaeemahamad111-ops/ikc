@@ -196,6 +196,18 @@ export default function HeroCanvasScroll() {
     };
   }, []);
 
+  const handleSkip = () => {
+    const nextSection = document.getElementById('about') || document.getElementById('philosophy');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({
+        top: window.innerHeight * 4,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div ref={containerRef} className={styles.heroSectionWrapper}>
       <div className={styles.stickyCanvasContainer}>
@@ -217,6 +229,16 @@ export default function HeroCanvasScroll() {
             <div className={styles.scrollDot} />
           </div>
         </div>
+
+        {/* Bottom Right Skip Button */}
+        <button
+          className={styles.skipButton}
+          onClick={handleSkip}
+          aria-label="Skip Scroll Animation"
+        >
+          <span>SKIP</span>
+          <span className={styles.arrowIcon}>&rarr;</span>
+        </button>
       </div>
     </div>
   );

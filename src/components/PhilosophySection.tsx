@@ -7,7 +7,8 @@ import styles from './PhilosophySection.module.css';
 
 export default function PhilosophySection() {
   return (
-    <section id="about" className={styles.section}>
+    <section id="about" data-section="philosophy" className={styles.section}>
+      <div id="philosophy" style={{ position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <div className={styles.container}>
         {/* Left Card: Cream sketch illustration panel */}
         <div className={styles.leftSketchCard}>

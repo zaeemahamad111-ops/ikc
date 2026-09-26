@@ -1,0 +1,298 @@
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #0A0B0D;
+}
+
+.bgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  filter: brightness(0.82) contrast(1.05);
+}
+
+/* Atmospheric Overlay Gradients */
+.vignetteOverlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(10, 11, 13, 0.1) 0%, rgba(10, 11, 13, 0.65) 75%, rgba(10, 11, 13, 0.9) 100%),
+    linear-gradient(to bottom, rgba(10, 11, 13, 0.6) 0%, rgba(10, 11, 13, 0.15) 35%, rgba(10, 11, 13, 0.4) 70%, rgba(10, 11, 13, 0.85) 100%);
+  pointer-events: none;
+}
+
+.contentContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none; /* children enable pointer events */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 4rem 3.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+/* Main Hero Left Block */
+.leftContent {
+  position: absolute;
+  left: 4.5rem;
+  bottom: 6.5rem;
+  pointer-events: auto;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrowText {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3.2px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.eyebrowLine {
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: rgba(197, 160, 89, 0.6);
+}
+
+/* Big Typography */
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(3.4rem, 6.8vw, 6.2rem);
+  font-weight: 400;
+  line-height: 1.04;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: -0.5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWord {
+  display: block;
+}
+
+.titleItalic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: #C5A059;
+  background: linear-gradient(135deg, #FDF0D5 0%, #C5A059 60%, #9E7D3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 25px rgba(197, 160, 89, 0.25);
+}
+
+/* Bottom Left Scroll Action */
+.scrollIndicator {
+  position: absolute;
+  left: 4.5rem;
+  bottom: 2.2rem;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scrollIndicator:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.scrollLineContainer {
+  position: relative;
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.scrollDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 7px;
+  background: var(--gold-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--gold-primary);
+  animation: scrollPulse 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    top: 80%;
+    opacity: 0;
+  }
+}
+
+.scrollLabel {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #D1D5E0;
+  text-transform: uppercase;
+}
+
+/* Right Side Vertical Tagline */
+.rightTagline {
+  position: absolute;
+  right: 4.5rem;
+  top: 48%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.verticalWords {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.verticalWords span {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+.rightTaglineLine {
+  width: 40px;
+  height: 1px;
+  background: rgba(197, 160, 89, 0.5);
+  margin-top: 0.2rem;
+}
+
+/* Bottom Right Skip Pill Button */
+.skipButton {
+  position: absolute;
+  right: 4.5rem;
+  bottom: 2.2rem;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.4rem;
+  background: rgba(18, 20, 24, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skipButton:hover {
+  background: rgba(197, 160, 89, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateX(3px);
+  box-shadow: 0 6px 24px rgba(197, 160, 89, 0.25);
+}
+
+.arrowIcon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.skipButton:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .leftContent {
+    left: 2.5rem;
+    bottom: 5.5rem;
+  }
+  .scrollIndicator {
+    left: 2.5rem;
+    bottom: 2rem;
+  }
+  .skipButton {
+    right: 2.5rem;
+    bottom: 2rem;
+  }
+  .rightTagline {
+    right: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftContent {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 5rem;
+  }
+  .mainTitle {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+  }
+  .scrollIndicator {
+    left: 1.5rem;
+    bottom: 1.5rem;
+  }
+  .skipButton {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.65rem;
+  }
+  .rightTagline {
+    display: none;
+  }
+}

@@ -61,18 +61,10 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   position: absolute;
   left: 50%;
-  
-  /* Hidden state by default */
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, -15px);
-  transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav.visible {
+  transform: translate(-50%, 0);
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, 0);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav a {
