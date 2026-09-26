@@ -11,19 +11,6 @@ export default function HeroStaticSection() {
     });
   };
 
-  const scrollToSection3 = () => {
-    const nextSection = document.getElementById('about') || document.getElementById('philosophy');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // Fallback scroll past hero canvas (~ 100vh + 2800px scroll depth)
-      window.scrollTo({
-        top: window.innerHeight + 2800,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <section className={styles.heroWrapper}>
       {/* Background Image Container */}
@@ -74,16 +61,6 @@ export default function HeroStaticSection() {
           </div>
           <div className={styles.rightTaglineLine} />
         </div>
-
-        {/* Bottom Right Skip Pill Button */}
-        <button
-          className={styles.skipButton}
-          onClick={scrollToSection3}
-          aria-label="Skip Animation to main content"
-        >
-          <span>SKIP</span>
-          <span className={styles.arrowIcon}>&rarr;</span>
-        </button>
       </div>
     </section>
   );
