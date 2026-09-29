@@ -20,7 +20,6 @@ export default function HeroStaticSection() {
           alt="Italian Commercial Kitchen Concept"
           className={styles.bgImage}
         />
-        <div className={styles.vignetteOverlay} />
       </div>
 
       {/* Main Overlay Content */}
