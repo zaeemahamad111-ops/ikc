@@ -208,7 +208,7 @@ const allProjectsList: Project[] = [
     year: '2025',
     capacity: '500 Covers / Day',
     location: 'Dubai Design District / DPC, Dubai, UAE',
-    image: '/ikc-images/Pizza oven.jpeg',
+    image: '/ikc-images/pizza-express.png',
     description: 'Contemporary Italian pizza concept featuring custom heavy-duty wood-fired thermal oven counter, refrigerated dough prep workstations, and high-speed sanitation.',
     scope: [
       'Custom Wood-Fired Thermal Pizza Station',
@@ -225,7 +225,7 @@ const allProjectsList: Project[] = [
     year: '2024',
     capacity: 'Private Villa Estate',
     location: 'Al Barari, Dubai, UAE',
-    image: '/pdf-images/company_page_11.jpg',
+    image: '/ikc-images/al-barari.jpg',
     description: 'Ultra-luxury private villa chef kitchen with bespoke Italian thermal range, custom outdoor stainless steel barbecue suite, and temperature-controlled pantry.',
     scope: [
       'Bespoke Italian Residential Chef Line',
@@ -242,7 +242,7 @@ const allProjectsList: Project[] = [
     year: '2025',
     capacity: 'Bespoke Cellar Suite',
     location: 'District 1, MBR City, Dubai, UAE',
-    image: '/ikc-images/wine bar IC ncs.jpeg',
+    image: '/ikc-images/district-one-wine.jpg',
     description: 'Custom engineered walk-in precision climate wine chiller and glass display cellar for an exclusive private villa estate in District One.',
     scope: [
       'Precision Multi-Zone Temperature Control',
@@ -253,6 +253,23 @@ const allProjectsList: Project[] = [
   },
   {
     id: '14',
+    title: 'HARD ROCK CAFE DUBAI',
+    category: 'Hospitality',
+    clientName: 'Hard Rock International',
+    year: '2024',
+    capacity: '800 Covers / Day',
+    location: 'Dubai Festival City, UAE',
+    image: '/ikc-images/hard-rock.jpg',
+    description: 'High-throughput commercial kitchen suite, custom rock bar counter, heavy-duty thermal cooking lines, and acoustic ventilation for Hard Rock Cafe Dubai.',
+    scope: [
+      'Heavy-Duty Commercial Thermal Cooking Line',
+      'Custom Stainless Steel Bar & Preparation Suite',
+      'High-Capacity Dual-Zone Refrigeration',
+      'Acoustic Canopy Hood & UV Filtration',
+    ],
+  },
+  {
+    id: '15',
     title: 'BAWE RESORT',
     category: 'Hotels',
     clientName: 'Bawe Zanzibar Luxury Resort',
