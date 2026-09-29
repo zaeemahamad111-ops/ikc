@@ -5,11 +5,11 @@
 .section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
+  height: auto;
+  padding: 7rem 0 5rem;
   background-color: var(--bg-dark, #0A0B0D);
   color: var(--text-light, #FFFFFF);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,14 +57,13 @@
 .container {
   max-width: 1400px;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
-  padding: clamp(4rem, 6vh, 5.5rem) 5% clamp(1.5rem, 3.5vh, 2.5rem);
+  padding: 0 5%;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-sizing: border-box;
 }
 
@@ -75,8 +74,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 2.5rem;
-  margin-bottom: clamp(1rem, 2vh, 1.5rem);
-  padding: clamp(1rem, 2vh, 1.4rem) clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  padding: 1.4rem 2.2rem;
   background: linear-gradient(135deg, rgba(22, 24, 30, 0.75) 0%, rgba(12, 14, 18, 0.85) 100%);
   border: 1px solid rgba(197, 160, 89, 0.22);
   border-radius: 14px;
@@ -139,33 +138,32 @@
 /* ─── DESKTOP Project List ─── */
 
 .desktopListContainer {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
   padding: 0 clamp(0.5rem, 1.5vw, 1.5rem);
 }
 
 .projectListWrapper {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.12);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
 }
 
 .listItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(0.5rem, 1.3vh, 1rem) 0;
+  padding: 1.35rem 0.75rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
   text-decoration: none;
   color: var(--text-light, #FFFFFF);
   transition:
     opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.45s ease;
+    border-color 0.45s ease,
+    background-color 0.3s ease;
   position: relative;
 }
 
@@ -477,7 +475,9 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   flex-shrink: 0;
 }
 
