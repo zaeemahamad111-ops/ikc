@@ -90,12 +90,12 @@ export default function Footer() {
           <div className={styles.linkCol}>
             <h3 className={styles.colTitle}>SERVICES</h3>
             <ul>
-              <li><Link href="/services#cooking">Cooking Systems</Link></li>
-              <li><Link href="/services#refrigeration">Cold Storage & Refrigeration</Link></li>
-              <li><Link href="/services#preparation">Food Preparation Workstations</Link></li>
-              <li><Link href="/services#extraction">Ventilation & Extraction</Link></li>
-              <li><Link href="/services#dishwashing">Sanitation & Dishwashing</Link></li>
+              <li><Link href="/services#project-management">End-to-End Project Management</Link></li>
               <li><Link href="/services#fabrication">Custom Stainless Fabrication</Link></li>
+              <li><Link href="/services#equipment">Commercial Equipment Distribution</Link></li>
+              <li><Link href="/services#installation">Installation & Training</Link></li>
+              <li><Link href="/services#repairs">Service & Repairs</Link></li>
+              <li><Link href="/services#hospitality">Hospitality & Foodservice</Link></li>
             </ul>
           </div>
 
