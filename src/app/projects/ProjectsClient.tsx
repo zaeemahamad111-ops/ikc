@@ -497,8 +497,11 @@ export default function ProjectsClient() {
                         openProjectModal(project);
                       }}
                     >
-                      <Camera size={13} />
-                      <span style={{ fontSize: '0.65rem', marginLeft: '4px' }}>PHOTOS & SPECS</span>
+                      <span className={styles.detailBtnText}>
+                        <span>PHOTOS</span>
+                        <span style={{ fontSize: '0.46rem', opacity: 0.85, margin: '1px 0' }}>&</span>
+                        <span>SPECS</span>
+                      </span>
                     </button>
                   </div>
                 </div>
