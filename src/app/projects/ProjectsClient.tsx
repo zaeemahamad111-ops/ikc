@@ -7,12 +7,12 @@ import {
   ArrowRight, 
   MapPin, 
   Building2, 
-  Users, 
   X, 
   CheckCircle2,
   FileText,
   Search,
-  Download
+  Download,
+  Camera
 } from 'lucide-react';
 import styles from './ProjectsClient.module.css';
 
@@ -21,10 +21,9 @@ interface Project {
   title: string;
   category: string;
   clientName: string;
-  year: string;
-  capacity: string;
   location: string;
   image: string;
+  gallery: string[];
   description: string;
   scope: string[];
 }
@@ -35,10 +34,13 @@ const allProjectsList: Project[] = [
     title: 'LE MERIDIEN AL AQAH',
     category: 'Hotels',
     clientName: 'Le Méridien / Marriott',
-    year: '2024',
-    capacity: '1,200 Meals / Day',
     location: 'Fujairah, UAE',
     image: '/ikc-images/All day dining Ic.jpeg',
+    gallery: [
+      '/ikc-images/All day dining Ic.jpeg',
+      '/ikc-images/All day dining IKC, NCS.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'Complete commercial kitchen installation for Le Méridien Al Aqah Beach Resort, including all-day dining thermal suites, high-capacity cold rooms, and custom stainless steel prep stations.',
     scope: [
       'Heavy-Duty Modular Italian Thermal Ranges',
@@ -52,10 +54,13 @@ const allProjectsList: Project[] = [
     title: 'VOLANTE',
     category: 'Residential',
     clientName: 'Volante Executive Tower',
-    year: '2024',
-    capacity: '35 Floors Club & Residences',
     location: 'Business Bay, Dubai, UAE',
     image: '/ikc-images/volante 1 .jpeg',
+    gallery: [
+      '/ikc-images/volante 1 .jpeg',
+      '/ikc-images/wine bar IC ncs.jpeg',
+      '/pdf-images/company_page_11.jpg'
+    ],
     description: 'Kitchen equipment and turnkey installation for the 35-floor residential tower private Club kitchen, bar area, and outdoor stainless steel BBQ station.',
     scope: [
       'Private Club Commercial Cooking Line',
@@ -64,16 +69,18 @@ const allProjectsList: Project[] = [
       'Whisper-Quiet Acoustic Hood Extraction',
     ],
   },
-
   {
-    id: '04',
+    id: '03',
     title: 'ROBERTO’S',
     category: 'Hospitality',
     clientName: 'Roberto’s Hospitality Group',
-    year: '2024',
-    capacity: '550 Covers / Day',
     location: 'DIFC, Dubai, UAE',
     image: '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
+    gallery: [
+      '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
+      '/ikc-images/wine bar IC ncs.jpeg',
+      '/ikc-images/20260121_152512000_iOS.jpg.jpeg'
+    ],
     description: 'Award-winning Italian fine dining culinary suite featuring an open executive show kitchen, custom cooking suite, wine display cellars, and cocktail modules.',
     scope: [
       'Bespoke Italian Thermal Suite & Pasta Boilers',
@@ -83,14 +90,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '05',
+    id: '04',
     title: 'JW MARRIOTT MARQUIS',
     category: 'Hotels',
     clientName: 'JW Marriott Group',
-    year: '2024',
-    capacity: '1,500 Covers / Day',
     location: 'Business Bay, Dubai, UAE',
     image: '/pdf-images/company_page_9.jpg',
+    gallery: [
+      '/pdf-images/company_page_9.jpg',
+      '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'Turnkey culinary execution for signature dining venues at the iconic JW Marriott Marquis Dubai, featuring high-output thermal suites and banquet kitchens.',
     scope: [
       'Heavy-Duty Italian Modular Thermal Ranges',
@@ -100,14 +110,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '06',
+    id: '05',
     title: 'MEYDAN',
     category: 'Hotels',
     clientName: 'Meydan Group',
-    year: '2024',
-    capacity: '2,000 Meals / Day',
     location: 'Nad Al Sheba, Dubai, UAE',
     image: '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+    gallery: [
+      '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+      '/ikc-images/main kitchen.jpeg',
+      '/ikc-images/All day dining Ic.jpeg'
+    ],
     description: 'High-volume banquet kitchen infrastructure, trackside catering suites, and VIP lounge food service facilities for the Meydan Grandstand & Hotel.',
     scope: [
       'Heavy Banquet Thermal Lines & Tilting Pans',
@@ -117,14 +130,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '07',
+    id: '06',
     title: 'LE ROYAL MERIDIEN BEACH RESORT AND SPA',
     category: 'Hotels',
     clientName: 'Le Méridien / Marriott',
-    year: '2024',
-    capacity: '1,000 Meals / Day',
     location: 'JBR Dubai, UAE',
     image: '/ikc-images/All day dining Ic.jpeg',
+    gallery: [
+      '/ikc-images/All day dining Ic.jpeg',
+      '/ikc-images/Steak House IC.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'Turnkey resort kitchen facilities, live beachfront cooking suites, specialty charcoal grills, and main all-day dining production kitchen.',
     scope: [
       'Specialty Charcoal & Lava Stone Grills',
@@ -134,14 +150,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '08',
+    id: '07',
     title: 'TORO TORO',
     category: 'Hospitality',
     clientName: 'Grosvenor House Luxury Resort',
-    year: '2025',
-    capacity: '750 Covers / Day',
     location: 'Dubai Marina, UAE',
     image: '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
+    gallery: [
+      '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
+      '/pdf-images/company_page_13.jpg',
+      '/ikc-images/Steak House IC.jpeg'
+    ],
     description: 'Pan-Latin signature restaurant with open display cooking kitchen, custom brass and stainless steel finishes, high-output charcoal grill line, and UV grease hoods.',
     scope: [
       'Open Display Show Kitchen Suite',
@@ -151,14 +170,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '09',
+    id: '08',
     title: 'BICE BAHRAIN',
     category: 'Hospitality',
     clientName: 'BiCE Hospitality Group',
-    year: '2024',
-    capacity: '450 Covers / Day',
     location: 'Moda Mall, Manama, Bahrain',
     image: '/ikc-images/Bice Bahrain IC.jpeg',
+    gallery: [
+      '/ikc-images/Bice Bahrain IC.jpeg',
+      '/ikc-images/Bice Bahrain Italian concept.jpeg',
+      '/ikc-images/wine bar IC ncs.jpeg'
+    ],
     description: 'Turnkey Italian fine dining kitchen installation located in Moda Mall, featuring heavy-duty Italian thermal cooking blocks, pasta preparation lines, and bar counters.',
     scope: [
       'Italian Heavy-Duty Thermal Cooking Block',
@@ -168,14 +190,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '10',
+    id: '09',
     title: 'ST REGIS MAURITIUS RESORT',
     category: 'Hotels',
     clientName: 'Marriott International',
-    year: '2024',
-    capacity: '700 Guests / Day',
     location: 'Le Morne, Mauritius',
     image: '/ikc-images/All day dining IKC, NCS.jpeg',
+    gallery: [
+      '/ikc-images/All day dining IKC, NCS.jpeg',
+      '/ikc-images/All day dining Ic.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'Turnkey luxury oceanfront resort kitchen facility constructed with anti-corrosive marine-grade steel to withstand humid island coastal environments.',
     scope: [
       'Coastal Marine 316 Grade Stainless Steel',
@@ -185,14 +210,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '11',
+    id: '10',
     title: 'PIZZA EXPRESS DPC',
     category: 'Hospitality',
     clientName: 'PizzaExpress International',
-    year: '2025',
-    capacity: '500 Covers / Day',
     location: 'Dubai Design District / DPC, Dubai, UAE',
     image: '/ikc-images/pizza-express.png',
+    gallery: [
+      '/ikc-images/pizza-express.png',
+      '/ikc-images/Pizza oven.jpeg',
+      '/ikc-images/20260121_152509000_iOS.jpg.jpeg'
+    ],
     description: 'Contemporary Italian pizza concept featuring custom heavy-duty wood-fired thermal oven counter, refrigerated dough prep workstations, and high-speed sanitation.',
     scope: [
       'Custom Wood-Fired Thermal Pizza Station',
@@ -202,14 +230,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '12',
+    id: '11',
     title: 'AL BARARI VILLA',
     category: 'Residential',
     clientName: 'Private Estate',
-    year: '2024',
-    capacity: 'Private Villa Estate',
     location: 'Al Barari, Dubai, UAE',
     image: '/ikc-images/al-barari.jpg',
+    gallery: [
+      '/ikc-images/al-barari.jpg',
+      '/pdf-images/company_page_11.jpg',
+      '/ikc-images/wine bar IC ncs.jpeg'
+    ],
     description: 'Ultra-luxury private villa chef kitchen with bespoke Italian thermal range, custom outdoor stainless steel barbecue suite, and temperature-controlled pantry.',
     scope: [
       'Bespoke Italian Residential Chef Line',
@@ -219,14 +250,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '13',
+    id: '12',
     title: 'WINE CHILLER DISTRICT ONE',
     category: 'Residential',
     clientName: 'District One Private Villa',
-    year: '2025',
-    capacity: 'Bespoke Cellar Suite',
     location: 'District 1, MBR City, Dubai, UAE',
     image: '/ikc-images/district-one-wine.jpg',
+    gallery: [
+      '/ikc-images/district-one-wine.jpg',
+      '/ikc-images/wine bar IC ncs.jpeg',
+      '/pdf-images/company_page_11.jpg'
+    ],
     description: 'Custom engineered walk-in precision climate wine chiller and glass display cellar for an exclusive private villa estate in District One.',
     scope: [
       'Precision Multi-Zone Temperature Control',
@@ -236,14 +270,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '14',
+    id: '13',
     title: 'HARD ROCK CAFE DUBAI',
     category: 'Hospitality',
     clientName: 'Hard Rock International',
-    year: '2024',
-    capacity: '800 Covers / Day',
     location: 'Dubai Festival City, UAE',
     image: '/ikc-images/hard-rock.jpg',
+    gallery: [
+      '/ikc-images/hard-rock.jpg',
+      '/ikc-images/Steak House IC.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'High-throughput commercial kitchen suite, custom rock bar counter, heavy-duty thermal cooking lines, and acoustic ventilation for Hard Rock Cafe Dubai.',
     scope: [
       'Heavy-Duty Commercial Thermal Cooking Line',
@@ -253,14 +290,17 @@ const allProjectsList: Project[] = [
     ],
   },
   {
-    id: '15',
+    id: '14',
     title: 'BAWE RESORT',
     category: 'Hotels',
     clientName: 'Bawe Zanzibar Luxury Resort',
-    year: '2025',
-    capacity: '350 Resort Guests',
     location: 'Bawe Island, Zanzibar, Tanzania',
     image: '/ikc-images/bawe zanzibar.jpg.jpeg',
+    gallery: [
+      '/ikc-images/bawe zanzibar.jpg.jpeg',
+      '/ikc-images/All day dining Ic.jpeg',
+      '/ikc-images/main kitchen.jpeg'
+    ],
     description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and automated fire suppression for off-grid tropical island conditions.',
     scope: [
       'Anti-Corrosive Marine-Grade 316 Stainless',
@@ -279,7 +319,6 @@ const referenceClientsFromPDF = [
   'Armani Cafè - Dubai Mall & MOE, UAE',
   'Emirates Flight Training & HQ - Dubai, UAE',
   'Emirates First Class Lounge T3 - Dubai, UAE',
-  'Amity University - Dubai Academic City, UAE',
   'Volante - Business Bay, Dubai, UAE',
   'BiCE Restaurant & Sapori Di Bice - Bahrain & Dubai',
   'Le Méridien Hotel & Conference Centre - Dubai, UAE',
@@ -302,12 +341,13 @@ const referenceClientsFromPDF = [
   'Maya Mexican Restaurant - Le Royal Méridien, Dubai',
 ];
 
-const categories = ['All', 'Hotels', 'Hospitality', 'Residential', 'Catering', 'Institutional'];
+const categories = ['All', 'Hotels', 'Hospitality', 'Residential'];
 
 export default function ProjectsClient() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleHash = () => {
@@ -316,6 +356,7 @@ export default function ProjectsClient() {
         const found = allProjectsList.find((p) => p.id === targetId || p.id === String(targetId).padStart(2, '0'));
         if (found) {
           setSelectedProject(found);
+          setActiveModalImage(found.gallery ? found.gallery[0] : found.image);
           setTimeout(() => {
             const el = document.getElementById(`project-${found.id}`);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -328,6 +369,11 @@ export default function ProjectsClient() {
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  const openProjectModal = (proj: Project) => {
+    setSelectedProject(proj);
+    setActiveModalImage(proj.gallery && proj.gallery.length > 0 ? proj.gallery[0] : proj.image);
+  };
 
   const filteredProjects = allProjectsList.filter((project) => {
     const matchesCategory = activeCategory === 'All' || project.category === activeCategory;
@@ -352,7 +398,7 @@ export default function ProjectsClient() {
           </h1>
           <p className={styles.heroDesc}>
             Explore our portfolio of completed turnkey commercial kitchens, luxury hotel dining suites, 
-            institutional dining halls, and high-performance catering installations across the UAE, GCC & East Africa.
+            and high-performance catering installations across the UAE, GCC & East Africa. Click any project to view kitchen photos and engineering specs.
           </p>
 
           <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -416,12 +462,11 @@ export default function ProjectsClient() {
                 key={project.id} 
                 id={`project-${project.id}`}
                 className={styles.projectCard}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => openProjectModal(project)}
               >
                 <div className={styles.imageBox}>
                   <img src={project.image} alt={project.title} className={styles.cardImg} />
                   <span className={styles.cardNum}>{project.id}</span>
-                  <span className={styles.yearBadge}>{project.year}</span>
                 </div>
 
                 <div className={styles.cardBody}>
@@ -439,10 +484,6 @@ export default function ProjectsClient() {
                       <Building2 size={11} />
                       {project.clientName}
                     </span>
-                    <span className={styles.capacityBadge}>
-                      <Users size={11} />
-                      {project.capacity}
-                    </span>
                   </div>
 
                   <p className={styles.projectDesc}>{project.description}</p>
@@ -451,14 +492,14 @@ export default function ProjectsClient() {
                     <span className={styles.categoryBadge}>{project.category}</span>
                     <button 
                       className={styles.detailBtn} 
-                      aria-label="View Technical Specifications"
+                      aria-label="View Kitchen Photos & Specifications"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSelectedProject(project);
+                        openProjectModal(project);
                       }}
                     >
-                      <FileText size={14} />
-                      <span style={{ fontSize: '0.65rem', marginLeft: '4px' }}>SPECS</span>
+                      <Camera size={13} />
+                      <span style={{ fontSize: '0.65rem', marginLeft: '4px' }}>PHOTOS & SPECS</span>
                     </button>
                   </div>
                 </div>
@@ -486,7 +527,7 @@ export default function ProjectsClient() {
         </div>
       </section>
 
-      {/* Interactive Technical Spec Modal */}
+      {/* Interactive Technical Spec & Kitchen Photo Modal */}
       {selectedProject && (
         <div className={styles.modalOverlay} onClick={() => setSelectedProject(null)}>
           <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
@@ -500,11 +541,30 @@ export default function ProjectsClient() {
 
             <div className={styles.modalGrid}>
               <div className={styles.modalImageCol}>
-                <img src={selectedProject.image} alt={selectedProject.title} className={styles.modalImg} />
+                <img 
+                  src={activeModalImage || selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className={styles.modalImg} 
+                />
+                
                 <div className={styles.modalBadgeRow}>
                   <span>{selectedProject.category}</span>
-                  <span>{selectedProject.year}</span>
                 </div>
+
+                {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                  <div className={styles.galleryThumbnailsRow}>
+                    {selectedProject.gallery.map((imgUrl, gIdx) => (
+                      <button
+                        key={gIdx}
+                        className={`${styles.galleryThumb} ${(activeModalImage || selectedProject.image) === imgUrl ? styles.activeThumb : ''}`}
+                        onClick={() => setActiveModalImage(imgUrl)}
+                        aria-label={`View photo ${gIdx + 1}`}
+                      >
+                        <img src={imgUrl} alt={`Kitchen view ${gIdx + 1}`} className={styles.galleryThumbImg} />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className={styles.modalContentCol}>
@@ -525,14 +585,6 @@ export default function ProjectsClient() {
                     <div>
                       <span className={styles.metaLabel}>Location</span>
                       <strong className={styles.metaVal}>{selectedProject.location}</strong>
-                    </div>
-                  </div>
-
-                  <div className={styles.modalMetaItem}>
-                    <Users size={14} className={styles.modalIcon} />
-                    <div>
-                      <span className={styles.metaLabel}>Capacity / Volume</span>
-                      <strong className={styles.metaVal}>{selectedProject.capacity}</strong>
                     </div>
                   </div>
                 </div>
