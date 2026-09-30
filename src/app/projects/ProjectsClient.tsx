@@ -64,23 +64,7 @@ const allProjectsList: Project[] = [
       'Whisper-Quiet Acoustic Hood Extraction',
     ],
   },
-  {
-    id: '03',
-    title: 'AMITY UNIVERSITY',
-    category: 'Institutional',
-    clientName: 'Amity Education Group',
-    year: '2024',
-    capacity: '3,000+ Meals / Day',
-    location: 'Academic City, Dubai, UAE',
-    image: '/pdf-images/company_page_10.jpg',
-    description: 'High-capacity central production kitchen and dining hall installation engineered for Amity University’s global benchmarked campus serving thousands of students daily.',
-    scope: [
-      'High-Volume Steam Boiling Pans & Tilting Bratt Pans',
-      'Continuous Flight-Type Conveyor Dishwashing Line',
-      'Walk-In Deep Freezing & Cold Storage Complex',
-      'Central Sanitation & Dosing Stations',
-    ],
-  },
+
   {
     id: '04',
     title: 'ROBERTO’S',

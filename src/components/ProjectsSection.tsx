@@ -30,18 +30,7 @@ const projects = [
     specs: ['Private Club Cooking Line', 'Outdoor Stainless BBQ', 'Wine Refrigeration'],
     highlight: 'Luxury Tower Club & BBQ Suite',
   },
-  {
-    id: '03',
-    title: 'AMITY UNIVERSITY',
-    category: 'INSTITUTIONAL',
-    clientName: 'Amity Education Group',
-    location: 'Academic City, Dubai, UAE',
-    year: '2024',
-    capacity: '3,000+ Meals/Day',
-    image: '/pdf-images/company_page_10.jpg',
-    specs: ['High-Volume Boiling Pans', 'Flight Conveyor Dishwasher', 'Cold Rooms'],
-    highlight: 'High-Volume Campus Dining',
-  },
+
   {
     id: '04',
     title: 'ROBERTO’S',
