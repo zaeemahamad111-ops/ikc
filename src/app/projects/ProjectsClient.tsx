@@ -271,22 +271,22 @@ const allProjectsList: Project[] = [
   },
   {
     id: '13',
-    title: 'HARD ROCK CAFE DUBAI',
+    title: 'HARD ROCK CAFE MALDIVES (FOOD TRUCK)',
     category: 'Hospitality',
     clientName: 'Hard Rock International',
-    location: 'Dubai Festival City, UAE',
+    location: 'Emboodhoo Lagoon, Maldives',
     image: '/ikc-images/hard-rock.jpg',
     gallery: [
       '/ikc-images/hard-rock.jpg',
       '/ikc-images/Steak House IC.jpeg',
       '/ikc-images/main kitchen.jpeg'
     ],
-    description: 'High-throughput commercial kitchen suite, custom rock bar counter, heavy-duty thermal cooking lines, and acoustic ventilation for Hard Rock Cafe Dubai.',
+    description: 'Custom engineered stainless steel food truck mobile kitchen solution, equipped with compact heavy-duty thermal cooking appliances, stainless prep workstations, and tropicalized refrigeration for Hard Rock Cafe Maldives.',
     scope: [
-      'Heavy-Duty Commercial Thermal Cooking Line',
-      'Custom Stainless Steel Bar & Preparation Suite',
-      'High-Capacity Dual-Zone Refrigeration',
-      'Acoustic Canopy Hood & UV Filtration',
+      'Bespoke Stainless Steel Mobile Food Truck Kitchen Fabrication',
+      'Compact Heavy-Duty Thermal Cooking Line & Grills',
+      'Tropicalized Under-Counter Refrigerated Prep Drawers',
+      'Custom Compact Canopy Hood Ventilation System',
     ],
   },
   {
