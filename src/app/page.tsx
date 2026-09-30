@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import HeroStaticSection from '@/components/HeroStaticSection';
 import HeroCanvasScroll from '@/components/HeroCanvasScroll';
 import PhilosophySection from '@/components/PhilosophySection';
-import SolutionsSection from '@/components/SolutionsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import StatsSection from '@/components/StatsSection';
 import BrandLogosMarquee from '@/components/BrandLogosMarquee';
@@ -15,7 +14,6 @@ export default function Home() {
       <HeroStaticSection />
       <HeroCanvasScroll />
       <PhilosophySection />
-      <SolutionsSection />
       <ProjectsSection />
       <StatsSection />
       <BrandLogosMarquee />
