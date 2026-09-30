@@ -51,7 +51,7 @@ const projects = [
     location: 'Business Bay, Dubai, UAE',
     year: '2024',
     capacity: '1,500 Covers/Day',
-    image: '/pdf-images/company_page_9.jpg',
+    image: '/ikc-images/jw_marriott_building.jpg',
     specs: ['Heavy Modular Thermal Ranges', 'Dual-Temp Cold Rooms', 'AISI 304 Steel'],
     highlight: 'Iconic 5-Star Hotel Kitchen',
   },

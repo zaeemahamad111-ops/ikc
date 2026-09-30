@@ -94,9 +94,9 @@ const allProjectsList: Project[] = [
     category: 'Hotels',
     clientName: 'JW Marriott Group',
     location: 'Business Bay, Dubai, UAE',
-    image: '/pdf-images/company_page_9.jpg',
+    image: '/ikc-images/jw_marriott_building.jpg',
     gallery: [
-      '/pdf-images/company_page_9.jpg',
+      '/ikc-images/jw_marriott_building.jpg',
       '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
       '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
       '/ikc-images/main kitchen.jpeg'

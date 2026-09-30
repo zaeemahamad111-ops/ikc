@@ -13,7 +13,7 @@ const servicesData = [
     title: 'END-TO-END PROJECT MANAGEMENT',
     subtitle: 'Comprehensive turnkey project management from initial space planning and MEP engineering to equipment installation and final handover.',
     icon: Layers,
-    image: '/pdf-images/company_page_9.jpg',
+    image: '/ikc-images/jw_marriott_building.jpg',
     badge: 'TURNKEY MANAGEMENT',
     isLight: true,
     details: [
