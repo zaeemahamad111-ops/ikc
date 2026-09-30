@@ -75,11 +75,10 @@ const allProjectsList: Project[] = [
     category: 'Hospitality',
     clientName: 'Roberto’s Hospitality Group',
     location: 'DIFC, Dubai, UAE',
-    image: '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
+    image: '/ikc-images/wine bar IC ncs.jpeg',
     gallery: [
-      '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
       '/ikc-images/wine bar IC ncs.jpeg',
-      '/ikc-images/20260121_152512000_iOS.jpg.jpeg'
+      '/pdf-images/company_page_13.jpg'
     ],
     description: 'Award-winning Italian fine dining culinary suite featuring an open executive show kitchen, custom cooking suite, wine display cellars, and cocktail modules.',
     scope: [
@@ -99,6 +98,7 @@ const allProjectsList: Project[] = [
     gallery: [
       '/pdf-images/company_page_9.jpg',
       '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+      '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
       '/ikc-images/main kitchen.jpeg'
     ],
     description: 'Turnkey culinary execution for signature dining venues at the iconic JW Marriott Marquis Dubai, featuring high-output thermal suites and banquet kitchens.',
@@ -115,11 +115,10 @@ const allProjectsList: Project[] = [
     category: 'Hotels',
     clientName: 'Meydan Group',
     location: 'Nad Al Sheba, Dubai, UAE',
-    image: '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
+    image: '/ikc-images/All day dining IKC, NCS.jpeg',
     gallery: [
-      '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
-      '/ikc-images/main kitchen.jpeg',
-      '/ikc-images/All day dining Ic.jpeg'
+      '/ikc-images/All day dining IKC, NCS.jpeg',
+      '/ikc-images/main kitchen.jpeg'
     ],
     description: 'High-volume banquet kitchen infrastructure, trackside catering suites, and VIP lounge food service facilities for the Meydan Grandstand & Hotel.',
     scope: [
