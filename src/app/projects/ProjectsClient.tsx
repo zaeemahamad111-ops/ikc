@@ -35,10 +35,10 @@ const allProjectsList: Project[] = [
     category: 'Hotels',
     clientName: 'Le Méridien / Marriott',
     location: 'Fujairah, UAE',
-    image: '/ikc-images/All day dining Ic.jpeg',
+    image: '/ikc-images/le meridian al aqah.jpg',
     gallery: [
+      '/ikc-images/le meridian al aqah.jpg',
       '/ikc-images/All day dining Ic.jpeg',
-      '/ikc-images/All day dining IKC, NCS.jpeg',
       '/ikc-images/main kitchen.jpeg'
     ],
     description: 'Complete commercial kitchen installation for Le Méridien Al Aqah Beach Resort, including all-day dining thermal suites, high-capacity cold rooms, and custom stainless steel prep stations.',
@@ -75,10 +75,11 @@ const allProjectsList: Project[] = [
     category: 'Hospitality',
     clientName: 'Roberto’s Hospitality Group',
     location: 'DIFC, Dubai, UAE',
-    image: '/ikc-images/wine bar IC ncs.jpeg',
+    image: '/ikc-images/Italia_Kitchen_robertos_abu_dhabi_13.jpg',
     gallery: [
-      '/ikc-images/wine bar IC ncs.jpeg',
-      '/pdf-images/company_page_13.jpg'
+      '/ikc-images/Italia_Kitchen_robertos_abu_dhabi_13.jpg',
+      '/ikc-images/Italia_Kitchen_robertos_abu_dhabi_14.jpg',
+      '/ikc-images/Italia_Kitchen_robertos_abu_dhabi_32.jpg'
     ],
     description: 'Award-winning Italian fine dining culinary suite featuring an open executive show kitchen, custom cooking suite, wine display cellars, and cocktail modules.',
     scope: [
@@ -97,8 +98,9 @@ const allProjectsList: Project[] = [
     image: '/ikc-images/jw_marriott_building.jpg',
     gallery: [
       '/ikc-images/jw_marriott_building.jpg',
+      '/ikc-images/Italia_kitchen_-jwmarriott-2-600x400.jpg',
+      '/ikc-images/Italia_kitchen_-jwmarriott-17-600x400.jpg',
       '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
-      '/ikc-images/20260121_152509000_iOS.jpg.jpeg',
       '/ikc-images/main kitchen.jpeg'
     ],
     description: 'Turnkey culinary execution for signature dining venues at the iconic JW Marriott Marquis Dubai, featuring high-output thermal suites and banquet kitchens.',
@@ -115,10 +117,11 @@ const allProjectsList: Project[] = [
     category: 'Hotels',
     clientName: 'Meydan Group',
     location: 'Nad Al Sheba, Dubai, UAE',
-    image: '/ikc-images/All day dining IKC, NCS.jpeg',
+    image: '/ikc-images/Italia_kitchen_-meydan-9.jpg',
     gallery: [
-      '/ikc-images/All day dining IKC, NCS.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/Italia_kitchen_-meydan-9.jpg',
+      '/ikc-images/Italia_kitchen_-meydan-11.jpg',
+      '/ikc-images/Italia_kitchen_-meydan-29.jpg'
     ],
     description: 'High-volume banquet kitchen infrastructure, trackside catering suites, and VIP lounge food service facilities for the Meydan Grandstand & Hotel.',
     scope: [
