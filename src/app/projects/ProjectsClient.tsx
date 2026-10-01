@@ -55,9 +55,7 @@ const allProjectsList: Project[] = [
     location: 'Business Bay, Dubai, UAE',
     image: '/ikc-images/volante 1 .jpeg',
     gallery: [
-      '/ikc-images/volante 1 .jpeg',
-      '/ikc-images/wine bar IC ncs.jpeg',
-      '/pdf-images/company_page_11.jpg'
+      '/ikc-images/volante 1 .jpeg'
     ],
     description: 'Kitchen equipment and turnkey installation for the 35-floor residential tower private Club kitchen, bar area, and outdoor stainless steel BBQ station.',
     scope: [
@@ -135,9 +133,7 @@ const allProjectsList: Project[] = [
     location: 'JBR Dubai, UAE',
     image: '/ikc-images/All day dining Ic.jpeg',
     gallery: [
-      '/ikc-images/All day dining Ic.jpeg',
-      '/ikc-images/Steak House IC.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/All day dining Ic.jpeg'
     ],
     description: 'Turnkey resort kitchen facilities, live beachfront cooking suites, specialty charcoal grills, and main all-day dining production kitchen.',
     scope: [
@@ -155,9 +151,7 @@ const allProjectsList: Project[] = [
     location: 'Dubai Marina, UAE',
     image: '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
     gallery: [
-      '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg',
-      '/pdf-images/company_page_13.jpg',
-      '/ikc-images/Steak House IC.jpeg'
+      '/ikc-images/Italia_kitchen_-torotoro-3.jpg.jpeg'
     ],
     description: 'Pan-Latin signature restaurant with open display cooking kitchen, custom brass and stainless steel finishes, high-output charcoal grill line, and UV grease hoods.',
     scope: [
@@ -175,9 +169,7 @@ const allProjectsList: Project[] = [
     location: 'Moda Mall, Manama, Bahrain',
     image: '/ikc-images/Bice Bahrain IC.jpeg',
     gallery: [
-      '/ikc-images/Bice Bahrain IC.jpeg',
-      '/ikc-images/Bice Bahrain Italian concept.jpeg',
-      '/ikc-images/wine bar IC ncs.jpeg'
+      '/ikc-images/Bice Bahrain IC.jpeg'
     ],
     description: 'Turnkey Italian fine dining kitchen installation located in Moda Mall, featuring heavy-duty Italian thermal cooking blocks, pasta preparation lines, and bar counters.',
     scope: [
@@ -195,9 +187,7 @@ const allProjectsList: Project[] = [
     location: 'Le Morne, Mauritius',
     image: '/ikc-images/All day dining IKC, NCS.jpeg',
     gallery: [
-      '/ikc-images/All day dining IKC, NCS.jpeg',
-      '/ikc-images/All day dining Ic.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/All day dining IKC, NCS.jpeg'
     ],
     description: 'Turnkey luxury oceanfront resort kitchen facility constructed with anti-corrosive marine-grade steel to withstand humid island coastal environments.',
     scope: [
@@ -234,9 +224,7 @@ const allProjectsList: Project[] = [
     location: 'Al Barari, Dubai, UAE',
     image: '/ikc-images/al-barari.jpg',
     gallery: [
-      '/ikc-images/al-barari.jpg',
-      '/pdf-images/company_page_11.jpg',
-      '/ikc-images/wine bar IC ncs.jpeg'
+      '/ikc-images/al-barari.jpg'
     ],
     description: 'Ultra-luxury private villa chef kitchen with bespoke Italian thermal range, custom outdoor stainless steel barbecue suite, and temperature-controlled pantry.',
     scope: [
@@ -254,9 +242,7 @@ const allProjectsList: Project[] = [
     location: 'District 1, MBR City, Dubai, UAE',
     image: '/ikc-images/district-one-wine.jpg',
     gallery: [
-      '/ikc-images/district-one-wine.jpg',
-      '/ikc-images/wine bar IC ncs.jpeg',
-      '/pdf-images/company_page_11.jpg'
+      '/ikc-images/district-one-wine.jpg'
     ],
     description: 'Custom engineered walk-in precision climate wine chiller and glass display cellar for an exclusive private villa estate in District One.',
     scope: [
@@ -292,9 +278,7 @@ const allProjectsList: Project[] = [
     location: 'Bawe Island, Zanzibar, Tanzania',
     image: '/ikc-images/bawe zanzibar.jpg.jpeg',
     gallery: [
-      '/ikc-images/bawe zanzibar.jpg.jpeg',
-      '/ikc-images/All day dining Ic.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/bawe zanzibar.jpg.jpeg'
     ],
     description: 'Complete island resort kitchen facility engineered with anti-corrosive marine steel and automated fire suppression for off-grid tropical island conditions.',
     scope: [
