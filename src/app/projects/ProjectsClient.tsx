@@ -37,9 +37,7 @@ const allProjectsList: Project[] = [
     location: 'Fujairah, UAE',
     image: '/ikc-images/le meridian al aqah.jpg',
     gallery: [
-      '/ikc-images/le meridian al aqah.jpg',
-      '/ikc-images/All day dining Ic.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/le meridian al aqah.jpg'
     ],
     description: 'Complete commercial kitchen installation for Le Méridien Al Aqah Beach Resort, including all-day dining thermal suites, high-capacity cold rooms, and custom stainless steel prep stations.',
     scope: [
@@ -99,9 +97,7 @@ const allProjectsList: Project[] = [
     gallery: [
       '/ikc-images/jw_marriott_building.jpg',
       '/ikc-images/Italia_kitchen_-jwmarriott-2-600x400.jpg',
-      '/ikc-images/Italia_kitchen_-jwmarriott-17-600x400.jpg',
-      '/ikc-images/Staff Kithen IC , NCS ITALY.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/Italia_kitchen_-jwmarriott-17-600x400.jpg'
     ],
     description: 'Turnkey culinary execution for signature dining venues at the iconic JW Marriott Marquis Dubai, featuring high-output thermal suites and banquet kitchens.',
     scope: [
