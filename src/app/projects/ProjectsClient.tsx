@@ -216,8 +216,7 @@ const allProjectsList: Project[] = [
     image: '/ikc-images/pizza-express.png',
     gallery: [
       '/ikc-images/pizza-express.png',
-      '/ikc-images/Pizza oven.jpeg',
-      '/ikc-images/20260121_152509000_iOS.jpg.jpeg'
+      '/ikc-images/Pizza oven.jpeg'
     ],
     description: 'Contemporary Italian pizza concept featuring custom heavy-duty wood-fired thermal oven counter, refrigerated dough prep workstations, and high-speed sanitation.',
     scope: [
@@ -275,9 +274,7 @@ const allProjectsList: Project[] = [
     location: 'Emboodhoo Lagoon, Maldives',
     image: '/ikc-images/hard-rock.jpg',
     gallery: [
-      '/ikc-images/hard-rock.jpg',
-      '/ikc-images/Steak House IC.jpeg',
-      '/ikc-images/main kitchen.jpeg'
+      '/ikc-images/hard-rock.jpg'
     ],
     description: 'Custom engineered stainless steel food truck mobile kitchen solution, equipped with compact heavy-duty thermal cooking appliances, stainless prep workstations, and tropicalized refrigeration for Hard Rock Cafe Maldives.',
     scope: [
